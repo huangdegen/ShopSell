@@ -1,0 +1,184 @@
+@charset "utf-8";
+.Guide {
+  padding-top: 10px;
+  color: #999;
+}
+.Guide h1 {
+  display: inline;
+  font-size: 14px;
+  font-weight: normal;
+}
+/*banner
+--------------------------------------*/
+.listBanner {
+  background: url(../images/list-banner.png) center top no-repeat;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+/*发布需求
+-------------------------------------------*/
+.PostYourWant {
+  width: 1000px;
+  margin: 10px auto;
+  background: #fff;
+}
+.PostYourWant .hd {
+  height: 80px;
+  padding-top: 40px;
+}
+.PostYourWant .hd h2 {
+  font: bold 26px/1.5 'Microsoft Yahei';
+  color: #646464;
+  text-align: center;
+}
+.PostYourWant .hd .close {
+  width: 29px;
+  height: 29px;
+  background: url(../../images/k150227/closedemand.png);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.PostYourWant .hd .close:hover {
+  background-position: 0 -29px;
+}
+.PostYourWant .part-l {
+  padding: 25px 40px 10px;
+  width: 800px;
+  margin: 0 auto;
+}
+.PostYourWant .part-r {
+  float: left;
+  border-left: 1px dashed #f0f0f0;
+  background: url(../../images/k150227/postyourwant-r.png) 40px 20px no-repeat;
+  width: 300px;
+  height: 285px;
+}
+.PostYourWant .formItem {
+  margin-bottom: 24px;
+}
+.PostYourWant .formItem label {
+  width: 145px;
+  padding-right: 10px;
+  text-align: right;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  *vertical-align: top;
+  *margin-top: 7px;
+  font: 16px/1.2 'Microsoft Yahei';
+  color: #646464;
+}
+.PostYourWant .txtStyle-pyw {
+  width: 490px;
+  height: 50px;
+  font: 14px/1 'Microsoft Yahei';
+  line-height: 29px\9;
+  padding: 0 5px;
+  border: 1px solid #bfbfbf;
+  color: #464646;
+  border-radius: 5px;
+}
+.PostYourWant .btn-pyw,
+.PostYourWant .btn-pyw2 {
+  float: left;
+  width: 200px;
+  height: 50px;
+  background: #1694c8;
+  color: #fff;
+  font: 24px/1 'Microsoft Yahei';
+  border-radius: 5px;
+}
+.PostYourWant .btn-pyw:hover {
+  background: #0b709a;
+}
+.PostYourWant .btn-pyw2 {
+  float: right;
+  /*background: #00c3dc url(../images/cus0930/servicesonline_11.png) no-repeat 30px center;*/
+  text-align: left;
+  text-indent: 70px;
+}
+.PostYourWant .btn-pyw2:hover {
+  background-color: #099db0;
+}
+.PostYourWant .submitted {
+  width: 290px;
+  padding: 10px 25px 10px 35px;
+}
+.PostYourWant .submitted h2 {
+  color: #fea40f;
+  font: 29px/45px 'Microsoft Yahei';
+  height: 45px;
+  text-align: center;
+}
+.PostYourWant .submitted h2 img {
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.PostYourWant .submitted .mbtxt {
+  font: 16px/40px 'Microsoft Yahei';
+  color: #646464;
+  margin-top: 18px;
+}
+.PostYourWant .submitted .closeBtn-pyw {
+  background: #bcbcbc;
+  width: 210px;
+  height: 37px;
+  color: #fff;
+  font: 17px/1 'Microsoft Yahei';
+  display: block;
+  margin: 25px auto 0 auto;
+}
+.PostYourWant .submitted .closeBtn-pyw:hover {
+  background: #999;
+}
+.indiePW {
+  position: inherit;
+  box-shadow: none;
+  border: none;
+}
+.PostYourWantS .inblock {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 500px;
+}
+.PostYourWantS .radio_label {
+  font-size: 18px;
+  color: #787878;
+}
+.PostYourWantS .radioBox {
+  margin-top: 15px;
+}
+.PostYourWantS .radioBox li {
+  float: left;
+  margin-left: 3.33%;
+  width: 18%;
+  margin-right: 12%;
+  *margin-right: 11%;
+  text-align: center;
+  cursor: pointer;
+}
+.PostYourWantS .radioBox li i.radio {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 3px solid #a7e5ff;
+  margin-right: 8px;
+}
+.PostYourWantS .radioBox li i.checked {
+  background-color: #1995c9;
+}
+.PostYourWantS .radioBox li .label {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #464646;
+}

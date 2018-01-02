@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>用户登录-舞泡</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" itemprop="description" content="舞泡,首家专业网店交易服务平台,市场占有率达80%以上." />
+		<meta itemprop="name" content="用户登录-舞泡" />
+		<meta itemprop="image" content="http://uc.5pao.com/images/70726/logo.png" />
+		<link href="css/base.css" type="text/css" rel="stylesheet" />
+		<link href="css/login.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="js/respond.src.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/base.js"></script>
+	</head>
+
+	<body>
+		<div id="totop">
+			<div class="topBar">
+				<div class="wrapper clearfix">
+					<a href="http://www.5pao.com" class="logo f-l" target="_self"></a>
+					<div class="topNav f-r">
+						<div class="entry">
+							<span class="welcome">您好，欢迎来到舞泡(<a href="http://www.5pao.com/theuser/noticedeatil-39820.html" target="_blank">股权代码 200798</a>)！</span>
+							<span class="login"><i class="user-icon"></i><a href="http://u.5pao.com/wucenter/memberCenter.html" target="_self">登录</a>/<a href="http://www.5pao.com/theuser/toregist.html" target="_blank">免费注册</a></span>
+						</div>
+						<div class="mainNav">
+							<input type="hidden" id="ioutflag" value="" />
+							<ul class="nav clearfix">
+								<li class="tohome">
+									<a id="imenu1" href="http://www.5pao.com" target="_blank">首页<i class="underline"></i></a>
+								</li>
+								<li>
+									<a id="imenu2" href="http://www.5pao.com/shopmm/tmallIndexNew.html" target="_blank">购买网店<i class="underline"></i></a>
+								</li>
+								<li>
+									<a id="imenu6" href="http://www.5pao.com/shopmm/shopsell.html" target="_blank">出售网店<i class="underline"></i></a>
+								</li>
+								<li>
+									<a id="imenu7" href="http://www.5pao.com/shopmm/spevaluate.html" target="_blank">网店估价<i class="underline"></i></a>
+								</li>
+								<li>
+									<a id="imenu8" href="http://www.5pao.com/shopmm/auctionListNew.html" target="_blank">网店拍卖<i class="underline"></i></a>
+								</li>
+								<li class="listbox">
+									<a id="iwupao" href="javascript:void(0)" onmouseover="xialashow()" onmouseout="hrefout()" rel="nofollow" class="more" target="_self">更多服务<i class="downIcon"></i></a>
+									<dl id="imy5pao" class="nav_in_downlist" onmouseover="xialashow()" onmouseout="xialahide()" style="display:none;">
+										<dd>
+											<a href="http://www.weishengsheng.com?f=wupao" target="_blank">公众号交易</a>
+										</dd>
+										<dd>
+											<a href="http://dianshang.liyida.com/index.html?flag=wupao" target="_blank">电商贷款</a>
+										</dd>
+										<dd>
+											<a href="http://www.5pao.com/shopsv/index.html" target="_blank">企业服务</a>
+										</dd>
+										<dd>
+											<a href="http://www.5pao.com/shopmm/supertools.html" target="_blank">优选服务商</a>
+										</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-placeholder"></div>
+		</div>
+
+		<div class="Login1"></div>
+		<div class="Login">
+			<div class="Login2"></div>
+			<div class="Login3"></div>
+			<form id="fm1" action="/login?service=http%3A%2F%2Fu.5pao.com%2Fwucenter%2FmemberCenter.html" method="post">
+				<div class="wrapper clearfix">
+					<div class="Login_main">
+						<div class="main">
+							<div class="hd">用户登录</div>
+							<div class="bd">
+								<div class="form_item">
+									<input id="username" name="username" class="required txt form_txt" tabindex="1" placeholder="请输入您的账号" type="text" value="" maxlength="20" autocomplete="false" />
+									<img src="images/name.png" />
+								</div>
+								<div class="form_item">
+									<input id="password" name="password" class="form_txt" tabindex="2" placeholder="请输入您的密码" type="password" value="" maxlength="20" autocomplete="off" />
+									<img src="images/code.png" />
+									<span class="tips"></span>
+								</div>
+								<div class="form_item">
+									<input id="vcode" name="vcode" class="required txt form_txt" tabindex="3" placeholder="请输入验证码" type="text" value="" maxlength="5" autocomplete="off" />
+									<img src="captcha.htm" onclick="this.src='captcha.htm?d='+new Date()*1" class="yzm" />
+								</div>
+								<div class="form_tips">
+
+								</div>
+								<div class="form_item clearfix" style="margin-top:5px;">
+									<div class="f-l">
+										<a href="http://www.5pao.com/theuser/tofindpwd.html" target="_blank">忘记密码？</a>
+										<a href="http://www.5pao.com/theuser/toregist.html" target="_blank">注册账号</a>
+									</div>
+									<input type="hidden" name="lt" value="LT-143404-tr4YTAUUl0AqkfHIgkgyT2NwTolCzl" />
+									<input type="hidden" name="execution" value="e2s1" />
+									<input type="hidden" name="_eventId" value="submit" />
+									<input type="submit" accesskey="l" class="subBtn f-r" value="登录" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="Login4"></div>
+
+		<div class="Footer">
+			<div class="JieShao wrapper">
+				<div class="part clearfix">
+					<div class="part-list f-l list-one">
+						<h3>新手入门</h3>
+						<ul>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-32287.html" target="_blank"><b></b>合同法律效力</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/getHelpcenter-26.html" target="_blank"><b></b>出售流程</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/getHelpcenter-27.html" target="_blank"><b></b>购买流程</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/helpcenterList-123.html" target="_blank"><b></b>如何充值</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/getHelpcenter-36.html" target="_blank"><b></b>如何提现</a>
+							</li>
+						</ul>
+					</div>
+					<div class="part-list f-l go-wp">
+						<h3>走进舞泡</h3>
+						<ul class="f-l">
+							<li>
+								<a href="http://www.5pao.com/theuser/siteinfo-1.html" target="_blank">舞泡介绍</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-32681.html" rel="nofollow" target="_blank">上海总公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-52271.html" rel="nofollow" target="_blank">杭州分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-52535.html" rel="nofollow" target="_blank">深圳分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-32057.html" rel="nofollow" target="_blank">北京分公司</a>
+							</li>
+						</ul>
+						<ul class="f-l ml-50">
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-38931.html" rel="nofollow" target="_blank">武汉分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-29106.html" rel="nofollow" target="_blank">长沙分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-50484.html" rel="nofollow" target="_blank">成都分公司</a>
+							</li>
+						</ul>
+					</div>
+					<div class="part-list f-l follow">
+						<h3>关注我们</h3>
+						<ul>
+							<li>
+								<a href="javascript:WeiXinShow()"><img src="images/icon-1.png" />微信平台</a>
+							</li>
+							<li>
+								<a href="http://e.weibo.com/wupaowang" rel="nofollow" target="_blank"><img src="images/icon-2.png">新浪微博</a>
+							</li>
+						</ul>
+					</div>
+					<div class="part-list f-l">
+						<h3>服务热线</h3>
+						<ul>
+							<li><img src="images/hotline.png" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="part">
+					<h3>荣誉认证</h3>
+					<div class="honor clearfix">
+						<a href="https://ss.knet.cn/verifyseal.dll?sn=2011090700100014515&amp;ct=df&amp;pa=807445" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-kxwz.jpg" border="0"></a>
+						<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110905165719441" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-yyzz.jpg" border="0"></a>
+						<a href="http://www.isc.org.cn/account/TopSearch.html?searchtext=%E8%88%9E%E6%B3%A1" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-hydw.png" border="0"></a>
+						<a href="http://www.zx110.org/" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/hugw.jpg" width="116" height="46" border="0" /></a>
+						<a href="https://credit.szfw.org/CX20160730011106380175.html" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/cxwz.jpg" border="0"></a>
+						<a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.5pao.com&lang=zh_cn" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/ndlogo.jpg" border="0" /></a>
+						<a href="http://www.anquan.org/authenticate/cert/?site=www.5pao.com&at=business" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/xalm.jpg" border="0"></a>
+						<a href="http://www.315online.com.cn/member/315110099.html" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-wsjy.jpg" border="0"></a>
+						<a href="http://si.trustutn.org/info?sn=578171101030851750538" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-mwz.png" border="0" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="Link">
+				<div class="FriendlyLink wrapper">
+					<div class="bd">
+						<div class="aboutUs clearfix">
+							<div class="f-l about-L">
+								<a href="http://www.5pao.com/theuser/siteinfo-1.html" rel="nofollow" target="_blank">关于我们</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-10.html" rel="nofollow" target="_blank">业务伙伴</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-5.html" rel="nofollow" target="_blank">商务合作</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-4.html" rel="nofollow" target="_blank">隐私保护</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-11.html" rel="nofollow" target="_blank">免责声明</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/hyinfo.html" target="_blank">新闻中心</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-7.html" rel="nofollow" target="_blank">版权说明</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/Sitemap.html" target="_blank">Sitemap</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-9.html" target="_blank">友情链接</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-5.html" rel="nofollow" target="_blank">加入我们</a><i>|</i>
+								<a href="#totop">返回顶部</a>
+							</div>
+							<ul class="f-r about-R">
+								<li class="f-l">
+									<a href="http://m.5pao.com" class="tophone" target="_blank">手机版</a>
+								</li>
+								<li class="f-l">
+									<a href="http://www.sh148.org/web/join/8651.htm" rel="nofollow" class="guwen" target="_blank" name="trz">常年法律顾问：陈志群</a>
+								</li>
+							</ul>
+						</div>
+						<div class="copyright">
+							<span>提供淘宝店铺出售转让、天猫商城出售转让等网店购买及卖出服务，开网店就上舞泡！</span>
+							<span class="ml-50">上海舞泡网络科技有限公司 版权所有 2011-2017 沪ICP备09092101号-1</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/cas.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<!-- AGCode360 -->
+		<!--<script type="text/javascript">
+			var _mvq = _mvq || [];
+			_mvq.push(['$setAccount', 'm-154181-0']);
+			_mvq.push(['$logConversion']);
+			(function() {
+				var mvl = document.createElement('script');
+				mvl.type = 'text/javascript';
+				mvl.async = true;
+				mvl.src = ('https:' == document.location.protocol ? 'https://static-ssl.mediav.com/mvl.js' : 'http://static.mediav.com/mvl.js');
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(mvl, s);
+			})();
+		</script>-->
+		<!-- End AGCode-60822-KQ -->
+	</body>
+
+</html>
