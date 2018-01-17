@@ -1,0 +1,793 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh">
+	<head>
+        <meta charset="utf-8" />
+        <%set string category_title=get_category_title(model.category_id,"网店出售转让")%>
+		<title>{model.title} - {category_title} - {site.name}</title>
+        <meta name="keywords" content="{model.seo_keywords}" />
+        <meta name="Description" content="{model.seo_description}" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link href="{config.webpath}css/base.css" type="text/css" rel="stylesheet" />
+        <link href="{config.webpath}css/newControl.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="{config.webpath}js/respond.src.js"></script>
+        <script type="text/javascript" src="{config.webpath}js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="{config.webpath}js/layer.js"></script>
+        <script type="text/javascript" src="{config.webpath}js/base.js"></script>
+        <script type="text/javascript" src="{config.webpath}js/device.js"></script>
+		<!--<script type="text/javascript" src="dwr/engine.js"></script>-->
+		<!--<script type="text/javascript" src="dwr/interface/spIndexDwr.js"></script>-->
+        <script type="text/javascript" src="{config.webpath}js/indexTop.js"></script>
+	</head>
+
+	<body>
+		<div id="totop">
+			<div class="topBar">
+				<div class="wrapper clearfix">
+					<a href="<%linkurl("index")%>" class="logo f-l" target="_self"></a>
+					<div class="topNav f-r">
+						<div class="entry">
+                            <script type="text/javascript" src="{config.webpath}js/welshow0.js"></script>
+						</div>
+						<div class="mainNav">
+							<input type="hidden" id="ioutflag" value="" />
+							<ul class="nav clearfix">
+								<li class="tohome">
+                                    <a href="<%linkurl("index")%>" target="_self">首页<i class="underline"></i></a>
+								</li>
+                                <li>
+                                    <a id="imenu2" href="/buyshop52-0-0-0-0-0-0-0-0-0-0-0-0-0/1.html" target="_blank">购买网店<i class="underline"></i></a>
+                                </li>
+                                <li>
+                                    <a id="imenu6" href="<%linkurl("shopsell")%>" target="_blank">出售网店<i class="underline"></i></a>
+                                </li>
+                                <li>
+                                    <a id="imenu7" href="<%linkurl("spevaluate")%>" target="_blank">网店估价<i class="underline"></i></a>
+                                </li>
+                                <li>
+                                    <a id="imenu8" href="/auctionshop.html" target="_blank">网店拍卖<i class="underline"></i></a>
+                                </li>
+								<!--<li class="listbox">
+									<a id="iwupao" href="javascript:void(0)" onmouseover="xialashow()" onmouseout="hrefout()" rel="nofollow" class="more" target="_self">更多服务<i class="downIcon"></i></a>
+									<dl id="imy5pao" class="nav_in_downlist" onmouseover="xialashow()" onmouseout="xialahide()" style="display:none;">
+									   <dd><a href="http://www.5pao.com/shopmm/tmallruzhu.html" target="_blank">网店代入驻</a></dd>
+										<dd><a href="http://www.5pao.com/shopmm/daimanage.html" target="_blank">网店代运营</a></dd>
+										<dd>
+											<a href="http://www.weishengsheng.com?f=wupao" target="_blank">公众号交易</a>
+										</dd>
+										<dd>
+											<a href="http://dianshang.liyida.com/index.html?flag=wupao" target="_blank">电商贷款</a>
+										</dd>
+										<dd>
+											<a href="http://www.5pao.com/shopsv/index.html" target="_blank">企业服务</a>
+										</dd>
+										<dd>
+											<a href="http://www.5pao.com/shopmm/supertools.html" target="_blank">优选服务商</a>
+										</dd>
+									</dl>
+								</li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-placeholder"></div>
+		</div>
+
+		<script type="text/javascript">
+			var ig = "2";
+			if(ig != "") {
+				document.getElementById("imenu" + ig).className = "isNow";
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/details.css" />
+		<div class="wrapper">
+			<div class="Guide">
+				<h1>当前位置</h1>：
+				<a href="/" target="_self">网店转让/出售</a> >
+				<a href="tmallIndexNew.html" target="_self">天猫网店出售转让</a> >
+				<h1>详情</h1></div>
+		</div>
+		<div class="wrapper firstScreen clearfix">
+			<div class="f-l mainInfo">
+				<div class="headline boxShade">
+					<div class="title">
+						<img class="icon" src="{config.webpath}images/title_tmall.png" />
+						<div class="text">{model.title}</div>
+						<div class="mark_list">
+							<span class="mark dujia">独家</span>
+
+						</div>
+					</div>
+					<div class="money clearfix">
+						<div class="f-l reference">
+                        官方估价:<span class="c-org del">{model.fields[market_price]}元</span> 
+                        | 技术年费:<span class="c-org">{model.fields[Technology_fee]}元(需退还)</span> 
+                        | 消保金:<span class="c-org">{model.fields[sell_price]}元(需退还)</span>
+                        </div>
+						<div class="f-r price">{model.fields[sell_price]}元</div>
+					</div>
+					<div class="btn_box clearfix">
+						<div class="f-l other">
+							<a href="javascript:void(0)" onclick="tmhpVideo();" class="video">交易流程<i class="icon"></i></a>
+							<a href="javascript:void(0)" onclick="saveCollection();" class="collect"><i class="icon"></i>收藏</a>
+						</div>
+						<div class="f-r btn">
+							<a href="javascript:void(0)" target="_self" class="org-btn" onclick="orderSave()">立即购买</a>
+							<a href="javascript:void(0)" target="_self" class="blue-btn" onclick="orderSave()">立即预定</a>
+						</div>
+					</div>
+				</div>
+				<div class="subInfo boxShade">
+					<div class="title clearfix">
+						<div class="f-l">
+							<img class="icon ibvm" src="{config.webpath}images/table_title_tmall.png" />
+							<span class="num ibvm">商城编号:{model.fields[goods_no]}</span>
+						</div>
+						<div class="f-r">
+							<span class="deduct">一般违规 <span class="c-black">{model.fields[simple_score]}分</span></span>
+							<span class="deduct">严重违规 <span class="c-black">{model.fields[serious_score]}分</span></span>
+							<span class="deduct">售假违规 <span class="c-black">{model.fields[serious_score]}分</span></span>
+						</div>
+					</div>
+					<table class="info-tbl">
+						<tbody>
+							<tr>
+								<th>商城类型</th>
+								<td><%=GetDictionaryName({model.shop_style_id.ToString()})%></td>
+								<th>商标类型</th>
+								<!--<td>R标（第<a title="第18类-皮革皮具" style="text-decoration:underline;cursor:default;color:#c00000;">18</a>类）</td>-->
+                                    <td><%=GetDictionaryName({model.chop_style_id.ToString()})%></td>
+								<th>纳税资质</th>
+								<td><%=GetDictionaryName({model.aptitude_id.ToString()})%></td>
+							</tr>
+							<tr>
+								<th>所在地区</th>
+								<td><%=GetDictionaryName({model.area_id.ToString()})%>地区</td>
+								<th>所属行业</th>
+								<td><%=GetDictionaryName({model.trade_style_id.ToString()})%></td>
+								<th>货源渠道</th>
+								<td><%=GetDictionaryName({model.supply_goods_id.ToString()})%></td>
+							</tr>
+							<tr>
+								<th>是否带货</th>
+								<td><%=GetDictionaryName({model.take_goods_id.ToString()})%></td>
+								<th>团队转让</th>
+								<td><%=GetDictionaryName({model.team_transfer_id.ToString()})%></td>
+								<th>运营经验</th>
+								<td><%=GetDictionaryName({model.experience_id.ToString()})%></td>
+							</tr>
+                            <tr>
+                                <th>一级类目</th>
+                                <td colspan="5">
+                                    <div class="inner text-overflow" title="{model.fields[LeverCate]}">{model.fields[LeverCate]}</div>
+                                </td>
+                            </tr>
+                            <tr class="blankBottom">
+                                <th>卖家描述</th>
+                                <td colspan="5">
+                                    <div class="inner text-overflow" title="{model.zhaiyao}">{model.zhaiyao}</div>
+                                    <a href="javascript:void(0)" onclick="infoTabNew(2);" class="more">更多<span class="arrow">&gt;</span></a>
+                                </td>
+                            </tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+            <!--服务顾问-->
+			<div class="f-r right-counselor boxShade">
+				<ul class="list">
+					<li class="clearfix first">
+						<div class="photo">
+							<div class="img"><img src="http://img.5pao.com/sp/images/Y201709/15065010503691salesImg.jpg" /></div>
+							<div class="level"><i class="four ibvm"></i><span class="text ibvm">销售顾问</span></div>
+						</div>
+						<div class="info">
+							<div class="line1 clearfix">
+								<a class="call" href="javascript:void(0)" onclick="QQToAsk('202054','855','3')"><img src="{config.webpath}images/call.png" border="0" /></a>
+							</div>
+							<div class="line3"><span class="c-black">范青山</span><span class="c-gray">工号:2082</span></div>
+							<div class="line2">联系Q Q：3002792098</div>
+							<div class="line4">
+								<span class="grade ibvm">评分5</span>
+								<a href="javascript:void(0)" onclick="pingJsale('','855')" class="c-gray ibvm">我要评分</a>
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="photo">
+							<div class="img"><img src="http://img.5pao.com/sp/images/Y201709/15065018436171salesImg.jpg" /></div>
+							<div class="level"><i class="four ibvm"></i><span class="text ibvm">销售顾问</span></div>
+						</div>
+						<div class="info">
+							<div class="line1 clearfix">
+								<a class="call ibvm" href="javascript:void(0)" onclick="QQToAsk('202054','865','3')"><img src="{config.webpath}images/call.png" border="0" /></a>
+								<span class="grade ibvm">评分5</span>
+							</div>
+							<div class="line2">联系Q Q：3004437696</div>
+							<div class="line3"><span class="c-black">朱俊</span><span class="c-gray">工号:2089</span>
+								<a href="javascript:void(0)" onclick="pingJsale('','865')" class="c-gray">我要评分&gt;</a>
+							</div>
+						</div>
+					</li>
+					<li class="clearfix last">
+						<div class="photo">
+							<div class="img"><img src="http://img.5pao.com/sp/images/Y201712/15137366113231salesImg.jpg" /></div>
+							<div class="level"><i class="four ibvm"></i><span class="text ibvm">销售顾问</span></div>
+						</div>
+						<div class="info">
+							<div class="line1 clearfix">
+								<a class="call ibvm" href="javascript:void(0)" onclick="QQToAsk('202054','920','3')"><img src="{config.webpath}images/call.png" border="0" /></a>
+								<span class="grade ibvm">评分5</span>
+							</div>
+							<div class="line2">联系Q Q：2853821086</div>
+							<div class="line3"><span class="c-black">杨咪</span><span class="c-gray">工号:2099</span>
+								<a href="javascript:void(0)" onclick="pingJsale('','920')" class="c-gray">我要评分&gt;</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="fixed-tab-XiangQing">
+			<div class="wrapper">
+				<ul id="tab_details_fixed" class="tab-XiangQing">
+					<li>
+						<a href="javascript:void(0)" onclick="infoTabNew(1)" target="_self" class="cur">店铺截图<i class="line"></i></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" onclick="infoTabNew(2)" target="_self">卖家描述<i class="line"></i></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" onclick="infoTabNew(3)" target="_self">常见问题<i class="line"></i></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" onclick="infoTabNew(4)" target="_self">购买流程<i class="line"></i></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" onclick="infoTabNew(5)" target="_self">同类店铺<i class="line"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="wrapper clearfix boxShade describe tmall">
+			<ul id="tab_details" class="tab-XiangQing">
+				<li>
+					<a href="javascript:void(0)" onclick="infoTabNew(1)" target="_self" class="cur">店铺截图<i class="line"></i></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="infoTabNew(2)" target="_self">卖家描述<i class="line"></i></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="infoTabNew(3)" target="_self">常见问题<i class="line"></i></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="infoTabNew(4)" target="_self">购买流程<i class="line"></i></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="infoTabNew(5)" target="_self">同类店铺<i class="line"></i></a>
+				</li>
+			</ul>
+			<div id="tabOne">
+				<div class="pic_switch">
+					<div class="imgBox">
+						<a href="javascript:void(0);" class="arrow_left"></a>
+						<a href="javascript:void(0);" class="arrow_right"></a>
+                        <%if(model.albums!=null)%>
+                        <%foreach(DTcms.Model.article_albums modelt in model.albums)%>
+                            <%if(model.albums.IndexOf(modelt)==1)%>
+                            <div id="tab_1_pic" class="pic_box">
+                                <div class="pic_list">
+                                    <img bimg="{modelt.original_path}" src="{modelt.thumb_path}" />
+                                </div>
+                            </div>
+                            <%else%>
+                            <div id="tab_1_pic" class="pic_box" style="display:none;">
+                                <div class="pic_list">
+                                    <img bimg="{modelt.original_path}" src="{modelt.thumb_path}" />
+                                </div>
+                            </div>
+                            <%/if%>
+                       
+                        <%/foreach%>
+                        <%/if%>
+
+						
+						<!--<div id="tab_2_pic" class="pic_box" style="display:none;">
+							<div class="pic_list">
+								<img src="http://img.5pao.com/sp/images/PZ201801/1_8311267638a7b0ae41c2c15b5d970b2bchatImg.png" />
+							</div>
+						</div>
+						<div id="tab_3_pic" class="pic_box" style="display:none;">
+							<div class="pic_list">
+								<img src="http://img.5pao.com/sp/images/PZ201801/1_3c35c38836e3fd68f2990abd3d0cb62fchatImg.png" />
+							</div>
+						</div>
+						<div id="tab_4_pic" class="pic_box" style="display:none;">
+							<div class="pic_list">
+								<img src="http://img.5pao.com/sp/images/PZ201801/1_bb9b8e4a9f5c9ab8c56d484eea917a14chatImg.png" />
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div id="tabTwo">
+				<div class="borderMol clearfix">
+					<div class="hd">卖家描述</div>
+					<div class="bd clearfix">
+						<div class="borderMolIn mjms">{model.zhaiyao}</div>
+						<div class="borderMolIn dynamicScoring">
+							<div class="hd-in">店铺半年内动态评分</div>
+							<div class="bd-in clearfix">
+								<div class="dsr-item over">宝贝与描述相符 ：</div>
+								<div class="dsr-item over">卖家的服务态度 ：</div>
+								<div class="dsr-item over last">卖家的发货速度 ：</div>
+							</div>
+						</div>
+						<div class="borderMolIn monthlyList">
+							<div class="hd-in">店铺交易月报</div>
+							<div class="bd-in clearfix">
+								<table class="monthly_tbl">
+									<tr>
+										<th>统计日期</th>
+										<th>浏览量</th>
+										<th>访客数</th>
+										<th>支付商品件数</th>
+										<th>支付买家数</th>
+										<th>客单价</th>
+										<th>支付转化率</th>
+										<th>支付金额</th>
+									</tr>
+									<tr>
+										<td colspan="8">暂无相应信息！</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tabThree">
+				<div class="borderMol clearfix faq">
+					<div class="hd">常见问题
+						<a class="hdRight gksp2" href="javascript:void(0)" onclick="tmhpVideo()">观看帮助视频</a>
+					</div>
+					<div class="bd">
+						<ul class="WenDa-box">
+							<li class="tiwen">购买天猫商城怎么办理公司过户呢？</li>
+							<li class="huida">购买天猫商城是将天猫帐号信息以及所属公司一并过户给买家，需要买家付款后预约见面交易并亲自到所属公司当地工商所办理公司法人和股权过户手续。如您还有任何其它天猫商城转让疑问请咨询在线服务顾问。</li>
+						</ul>
+						<ul class="WenDa-box">
+							<li class="tiwen">天猫转让是公司商标店铺一起转让的吗？</li>
+							<li class="huida">购买天猫商城是公司与店铺是一并转让的。商标是否转让主要是根据店铺类型决定，旗舰店属于自有商标，交易时必须连同商标一并转让；专营店和专卖店均属于商标授权类型，不转让商标不会影响经营。</li>
+						</ul>
+						<ul class="WenDa-box">
+							<li class="tiwen">天猫卖家公司有账务或者是税务问题怎么办？</li>
+							<li class="huida">通过签署具备法律效力的股权转让协议来规定公司债务或税务纠纷的归属问题。其次可以通过以下程序规避风险：会计→审计公司债务；税务局→查税；银行→查贷款。确保您购买的店铺与公司万无一失。</li>
+						</ul>
+						<ul class="WenDa-box" style="border:none;">
+							<li class="tiwen">买天猫商城有被卖家找回账号的风险吗？</li>
+							<li class="huida">天猫商城是企业认证类型的账号，官方任何认证与操作均是以企业信息为准。天猫商城交易是连同公司企业法人和股权一并过户给买家，转让非常彻底，后期不存在风险。</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="tabFour">
+				<div class="borderMol clearfix process">
+					<div class="hd">购买流程</div>
+					<div class="bd">
+						<img src="{config.webpath}images/gmlc_tmall.png" />
+					</div>
+				</div>
+			</div>
+			<div id="tabFive">
+				<div class="borderMol clearfix">
+					<div class="hd" id="isameshopdiv">同类店铺
+						<!--<a class="hdRight tltj" href="javascript:void(0)" onclick="ShowSameShops()">换一批</a>-->
+					</div>
+					<div class="bd">
+						<div class="theSame clearfix" id="ishopshow">
+                            <div class="store f-l">
+                                <i class="tuijian"></i>
+                                <div class="storebox">
+                                    <div class="title">浙江嘉兴地区服饰鞋包女装旗舰店闲置店铺出售</div>
+                                    <div class="property clearfix">	
+                                        <div class="f-l"><p>所属行业：服饰鞋包</p><p>商标类型：R标</p><p>商城类型：旗舰店</p></div>	
+                                        <div class="f-r">
+                                            <div class="price">3.34万</div>
+                                            <a href="shopsGet-203549.html" class="toDetails">查看详情&gt;</a>
+                                        </div>
+                                    </div>
+                                    <div class="mark_list">
+                                        <span class="mark">公司认证</span>
+                                        <span class="mark">可当面交易</span>
+                                        <span class="mark">优质店铺</span>
+                                        <span class="mark">无任何扣分</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store f-r">
+                                <i class="tuijian"></i>
+                                <div class="storebox">
+                                    <div class="title">江苏常熟男鞋旗舰店2字中文名字好听卖家靠谱诚意转让</div>
+                                    <div class="property clearfix">	
+                                        <div class="f-l"><p>所属行业：服饰鞋包</p><p>商标类型：R标</p><p>商城类型：旗舰店</p></div>	
+                                        <div class="f-r">
+                                            <div class="price">13万</div>
+                                            <a href="shopsGet-203548.html" class="toDetails">查看详情&gt;</a>
+                                        </div>
+                                    </div>
+                                <div class="mark_list"></div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="borderMolIn ohterRead">
+							<div class="hd-in">浏览过该网店的还看了</div>
+							<div class="bd-in clearfix">
+								<div class="f-l box">
+									<div class="item">
+										<a class="price" href="shopsGet-203558.html" target="_blank">30万</a>
+										<div class="title">
+											<p>
+												<a href="shopsGet-203558.html" title="华北地区内衣旗舰店纯英文商标名称个性诚心出售" target="_blank">华北地区内衣旗舰店纯英文商标名称个性诚心出售</a>
+											</p>
+										</div>
+									</div>
+									<div class="item">
+										<a class="price" href="shopsGet-203555.html" target="_blank">4万</a>
+										<div class="title">
+											<p>
+												<a href="shopsGet-203555.html" title="常熟地区女装天猫旗舰店4字中文商标诚意出售" target="_blank">常熟地区女装天猫旗舰店4字中文商标诚意出售</a>
+											</p>
+										</div>
+									</div>
+									<div class="item">
+										<a class="price" href="shopsGet-203552.html" target="_blank">60万</a>
+										<div class="title">
+											<p>
+												<a href="shopsGet-203552.html" title="江浙沪地区女士内衣旗舰店中英文商标名称好听诚心出售" target="_blank">江浙沪地区女士内衣旗舰店中英文商标名称好听诚心出售</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="f-r box">
+									<div class="item">
+										<a class="price" href="shopsGet-203550.html" target="_blank">22.3万</a>
+										<div class="title">
+											<p>
+												<a href="shopsGet-203550.html" title="华东地区男鞋旗舰店动态全红两字好听中文名卖家诚心出售" target="_blank">华东地区男鞋旗舰店动态全红两字好听中文名卖家诚心出售</a>
+											</p>
+										</div>
+									</div>
+									<div class="item">
+										<a class="price" href="shopsGet-203549.html" target="_blank">3.34万</a>
+										<div class="title">
+											<p>
+												<a href="shopsGet-203549.html" title="浙江嘉兴地区服饰鞋包女装旗舰店闲置店铺出售" target="_blank">浙江嘉兴地区服饰鞋包女装旗舰店闲置店铺出售</a>
+											</p>
+										</div>
+									</div>
+									<div class="item">
+										<a class="price" href="shopsGet-203548.html" target="_blank">13万</a>
+										<div class="title">
+											<p>
+												<a href="shopsGet-203548.html" title="江苏常熟男鞋旗舰店2字中文名字好听卖家靠谱诚意转让" target="_blank">江苏常熟男鞋旗舰店2字中文名字好听卖家靠谱诚意转让</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var shopId = '202054';
+			var wushop = "http://u.5pao.com/spcenter";
+			var shopStr = "202054,2,0,,,3,101,,e";
+		</script>
+        <script type="text/javascript" src="{config.webpath}js/getShop.js"></script>
+        <script type="text/javascript" src="{config.webpath}js/details.js"></script>
+		<script type="text/javascript">
+			//ShowSameShops();
+			$(window).scroll(function() {
+				tabFixed(590);
+			});
+			$('.pic_switch').tabSwtich('.tab-pic', '.pic_box');
+		</script>
+
+		<div class="kf_border"></div>
+		<div class="function">
+			<div class="fix" style="position:absolute;top:0;right:0;">
+				<div class="type">
+					<ul>
+						<li>
+							<a href="javascript:void(0);" class="type-l lsjl"></a>
+
+							<div class="lsjldiv typeshow" style="display:none;">
+								<i class="icon"></i>
+								<div class="hd">历史浏览</div>
+								<div class="history">
+									<div class="history-list">
+
+										<div class="list list-first">
+											<span class="imgbox"><img src="{config.webpath}images/icon-tmall.png"/></span>
+											<a href="shopsGet-202054.html" class="linkTitle" title="武汉地区五年箱包专营店带R标客户诚心转让出售" target="_blank">武汉地区五年箱包专营店带R标客户诚心转...</a>
+											<span class="price"><b>¥</b>88900.0</span>
+											<span class="line"></span>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li>
+							<a href="http://u.5pao.com/spcenter/collectionList-1.html" target="_blank" class="type-l scdp"></a>
+							<div class="typeshow" style="display:none;"><i class="icon"></i>
+								<a href="http://u.5pao.com/spcenter/collectionList-1.html" class="golink" target="_blank">我的收藏</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="type-l gfrx"></a>
+							<div class="typeshow gfrxdiv" style="display:none;"><i class="icon"></i>官方热线<span class="hotline">400-969-8688</span></div>
+						</li>
+						<li>
+							<a href="/theuser/servCenter.html" target="_blank" class="type-l bzzx"></a>
+							<div class="typeshow" style="display:none;"><i class="icon"></i>
+								<a href="/theuser/servCenter.html" class="golink" target="_blank">帮助中心</a>
+							</div>
+						</li>
+						<li>
+							<a href="http://u.5pao.com/wucenter/tojianyi.html" target="_blank" class="type-l yjfk"></a>
+							<div class="typeshow" style="display:none;"><i class="icon"></i>
+								<a href="http://u.5pao.com/wucenter/tojianyi.html" class="golink" target="_blank">投诉建议</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:void(0);" onclick="showKefuqqValid();" class="type-l kfjy"></a>
+							<div class="typeshow jiaoyan" style="display:none;"><i class="icon"></i>
+								<a href="javascript:void(0);" onclick="showKefuqqValid();" class="golink" target="_self">客服QQ校验</a>
+							</div>
+						</li>
+						<li class="Top">
+							<a href="#totop" target="_self"><img src="{config.webpath}images/totop.png" /></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="to-Top">
+			<a href="#totop" target="_self"><img src="{config.webpath}images/totop.png" /></a>
+		</div>
+		<div class="service-Kefu" style="display:none;">
+			<div class="fix1" style="position:absolute;bottom:0;right:0;">
+				<a href="javascript:void(0);" onclick="serviceSwitch();" class="tx" target="_self"><img src="{config.webpath}images/unfold.gif" /></a>
+				<div class="kefu">
+					<div class="hd clearfix">
+						<span class="newtitle">客服咨询</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="c_service" class="service-Kefu service-Kefu-up" style="display:none;">
+			<a href="javascript:void(0);" onclick="serviceSwitch();" class="tx" target="_self"><img src="{config.webpath}images/packup.gif" /></a>
+			<div class="kefu">
+				<div class="hd clearfix">
+					<span class="newtitle">客服咨询</span>
+				</div>
+				<div class="bd">
+					<div class="contact-list contact-list-first clearfix">
+						<div class="f-l">
+							<span class="imgbox ibvm"><img src="{config.webpath}images/logo-tmall.png" /></span>
+							<span class="ibvm">买天猫店</span>
+						</div>
+						<div class="f-r">
+							<a href="javascript:void(0);" onclick="SjQqToAsk('1')" class="contact" target="_self"><i class="icon_qq"></i>联系他</a>
+						</div>
+					</div>
+					<div class="contact-list clearfix">
+						<div class="f-l">
+							<span class="imgbox ibvm"><img src="{config.webpath}images/logo-taobao.png" /></span>
+							<span class="ibvm">买淘宝店</span>
+						</div>
+						<div class="f-r">
+							<a href="javascript:void(0);" onclick="SjQqToAsk('2')" class="contact" target="_self"><i class="icon_qq"></i>联系他</a>
+						</div>
+					</div>
+					<div class="contact-list clearfix">
+						<div class="f-l">
+							<span class="imgbox ibvm"><img src="{config.webpath}images/logo-other.png" /></span>
+							<span class="ibvm">买其它店</span>
+						</div>
+						<div class="f-r">
+							<a href="javascript:void(0);" onclick="SjQqToAsk('3')" class="contact" target="_self"><i class="icon_qq"></i>联系他</a>
+						</div>
+					</div>
+					<div class="contact-list clearfix">
+						<div class="f-l">
+							<span class="imgbox ibvm"><img src="{config.webpath}images/logo-ruzhu.png" /></span>
+							<span class="ibvm">卖天猫店</span>
+						</div>
+						<div class="f-r">
+							<a href="javascript:void(0);" onclick="QaqqToAsk('4')" class="contact" target="_self"><i class="icon_qq"></i>联系他</a>
+						</div>
+					</div>
+					<div class="contact-list clearfix">
+						<div class="f-l">
+							<span class="imgbox ibvm"><img src="{config.webpath}images/logo-yunying.png" /></span>
+							<span class="ibvm">卖淘宝店</span>
+						</div>
+						<div class="f-r">
+							<a href="javascript:void(0);" onclick="SjQqToAsk('2')" class="contact" target="_self"><i class="icon_qq"></i>联系他</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="feedback" class="feedback boxShade" style="display:none;">
+			<div class="tab">
+				<a href="javascript:void(0);" class="cur">意见反馈<i></i></a>
+				<a href="javascript:void(0);">投诉留言<i></i></a>
+			</div>
+			<div class="tab_con clearfix" style="display:block;">
+				<div class="form-row">
+					<textarea class="input-txt" placeholder="请输入你要反馈的内容"></textarea>
+				</div>
+				<div class="form-row">
+					<div class="row-title">联系方式</div>
+					<div class="col f-l">
+						<input type="text" class="input-txt" placeholder="手机号、QQ均可">
+					</div>
+					<div class="col f-r">
+						<input type="submit" class="btn" value="提交反馈">
+					</div>
+				</div>
+			</div>
+			<div class="tab_con clearfix">
+				<div class="form-row">
+					<textarea class="input-txt" placeholder="事件描述"></textarea>
+				</div>
+				<div class="form-row">
+					<div class="col f-l">
+						<input type="text" class="input-txt" placeholder="投诉人姓名">
+					</div>
+					<div class="col f-r">
+						<input type="text" class="input-txt" placeholder="手机">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col f-l">
+						<input type="text" class="input-txt" placeholder="QQ号">
+					</div>
+					<div class="col f-r">
+						<input type="submit" class="btn" value="提交反馈">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="Footer">
+			<div class="JieShao wrapper">
+				<div class="part clearfix">
+					<div class="part-list f-l list-one">
+						<h3>新手入门</h3>
+						<ul>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-32287.html" target="_blank"><b></b>合同法律效力</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/getHelpcenter-26.html" target="_blank"><b></b>出售流程</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/getHelpcenter-27.html" target="_blank"><b></b>购买流程</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/helpcenterList-123.html" target="_blank"><b></b>如何充值</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/getHelpcenter-36.html" target="_blank"><b></b>如何提现</a>
+							</li>
+						</ul>
+					</div>
+					<div class="part-list f-l go-wp">
+						<h3>走进舞泡</h3>
+						<ul class="f-l">
+							<li>
+								<a href="http://www.5pao.com/theuser/siteinfo-1.html" target="_blank">舞泡介绍</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-32681.html" rel="nofollow" target="_blank">上海总公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-52271.html" rel="nofollow" target="_blank">杭州分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-52535.html" rel="nofollow" target="_blank">深圳分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-32057.html" rel="nofollow" target="_blank">北京分公司</a>
+							</li>
+						</ul>
+						<ul class="f-l ml-50">
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-38931.html" rel="nofollow" target="_blank">武汉分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-29106.html" rel="nofollow" target="_blank">长沙分公司</a>
+							</li>
+							<li>
+								<a href="http://www.5pao.com/theuser/noticedeatil-50484.html" rel="nofollow" target="_blank">成都分公司</a>
+							</li>
+						</ul>
+					</div>
+					<div class="part-list f-l follow">
+						<h3>关注我们</h3>
+						<ul>
+							<li>
+								<a href="javascript:WeiXinShow()"><img src="{config.webpath}images/icon-1.png" />微信平台</a>
+							</li>
+							<li>
+								<a href="http://e.weibo.com/wupaowang" rel="nofollow" target="_blank"><img src="{config.webpath}images/icon-2.png">新浪微博</a>
+							</li>
+						</ul>
+					</div>
+					<div class="part-list f-l">
+						<h3>服务热线</h3>
+						<ul>
+							<li><img src="{config.webpath}images/hotline.png" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="part">
+					<h3>荣誉认证</h3>
+					<div class="honor clearfix">
+						<a href="https://ss.knet.cn/verifyseal.dll?sn=2011090700100014515&amp;ct=df&amp;pa=807445" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-kxwz.jpg" border="0"></a>
+						<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110905165719441" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-yyzz.jpg" border="0"></a>
+						<a href="http://www.isc.org.cn/account/TopSearch.html?searchtext=%E8%88%9E%E6%B3%A1" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-hydw.png" border="0"></a>
+						<a href="http://www.zx110.org/" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/hugw.jpg" width="116" height="46" border="0" /></a>
+						<a href="https://credit.szfw.org/CX20160730011106380175.html" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/cxwz.jpg" border="0"></a>
+						<a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.5pao.com&lang=zh_cn" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/ndlogo.jpg" border="0" /></a>
+						<a href="http://www.anquan.org/authenticate/cert/?site=www.5pao.com&at=business" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/xalm.jpg" border="0"></a>
+						<a href="http://www.315online.com.cn/member/315110099.html" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-wsjy.jpg" border="0"></a>
+						<a href="http://si.trustutn.org/info?sn=578171101030851750538" rel="nofollow" target="_blank"><img src="http://www.5pao.com/theuser/images/land-mwz.png" border="0"></a>
+					</div>
+				</div>
+			</div>
+			<div class="Link">
+				<div class="FriendlyLink wrapper">
+					<div class="bd">
+						<div class="aboutUs clearfix">
+							<div class="f-l about-L">
+								<a href="http://www.5pao.com/theuser/siteinfo-1.html" rel="nofollow" target="_blank">关于我们</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-10.html" rel="nofollow" target="_blank">业务伙伴</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-5.html" rel="nofollow" target="_blank">商务合作</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-4.html" rel="nofollow" target="_blank">隐私保护</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-11.html" rel="nofollow" target="_blank">免责声明</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/hyinfo.html" target="_blank">新闻中心</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-7.html" rel="nofollow" target="_blank">版权说明</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/Sitemap.html" target="_blank">Sitemap</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-9.html" target="_blank">友情链接</a><i>|</i>
+								<a href="http://www.5pao.com/theuser/siteinfo-5.html" rel="nofollow" target="_blank">加入我们</a><i>|</i>
+								<a href="#totop">返回顶部</a>
+							</div>
+							<div class="f-r about-R">
+								<a href="http://m.5pao.com" class="tophone" target="_blank">手机版</a>
+								<a href="http://www.sh148.org/web/join/8651.htm" rel="nofollow" class="guwen" target="_blank" name="trz">常年法律顾问：陈志群</a>
+							</div>
+						</div>
+						<div class="copyright">
+							<span>提供淘宝店铺出售转让、天猫商城出售转让等网店购买及卖出服务，开网店就上舞泡！</span>
+							<span class="ml-50">上海舞泡网络科技有限公司 版权所有 2011-2018 沪ICP备09092101号-1</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <script type="text/javascript" src="{config.webpath}js/jquery_netpet.js"></script>
+        <script type="text/javascript" src="{config.webpath}js/Netpet.js"></script>
+	</body>
+
+</html>

@@ -18,11 +18,11 @@ namespace DTcms.Web.admin.article
         {
             this.channel_id = DTRequest.GetQueryInt("channel_id");
             this.channel_name = new BLL.site_channel().GetChannelName(this.channel_id); //取得频道名称
-            if (this.channel_id == 0)
-            {
-                JscriptMsg("频道参数不正确！", "back");
-                return;
-            }
+            //if (this.channel_id == 0)
+            //{
+            //    JscriptMsg("频道参数不正确！", "back");
+            //    return;
+            //}
             if (!Page.IsPostBack)
             {
                 ChkAdminLevel("channel_" + this.channel_name + "_category", DTEnums.ActionEnum.View.ToString()); //检查权限

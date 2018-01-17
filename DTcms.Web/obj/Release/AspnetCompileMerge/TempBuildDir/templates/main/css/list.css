@@ -1,0 +1,647 @@
+@charset "UTF-8";
+
+/*banner
+--------------------------------------*/
+.listBanner {
+  background: url(../images/list-banner.png) center top no-repeat;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+/*筛选条件
+--------------------------------------*/
+.listBg {
+  background-color: #fff;
+  -moz-box-shadow: 0 0 4px rgba(11, 3, 6, 0.11);
+  -webkit-box-shadow: 0 0 4px rgba(11, 3, 6, 0.11);
+  box-shadow: 0 0 4px rgba(11, 3, 6, 0.11);
+  border-radius: 10px;
+}
+.filtrateList {
+  font-size: 14px;
+  line-height: 20px;
+  z-index: 15;
+}
+.filtrateList .searchbox {
+  padding: 15px 80px 15px 50px;
+  line-height: 30px;
+  color: #999;
+}
+.filtrateList .searchbox .guide h1 {
+  font-size: 14px;
+  display: inline;
+  font-weight: normal;
+}
+.filtrateList .searchbox .search {
+  position: relative;
+  width: 465px;
+}
+.filtrateList .searchbox .search .searchTxt {
+  width: 383px;
+  height: 28px;
+  line-height: 28px\9;
+  padding: 0 70px 0 10px;
+  border: 1px solid #bfbfbf;
+  font-size: 14px;
+  color: #999;
+  border-radius: 5px;
+}
+.filtrateList .searchbox .search .searchBtn {
+  background-color: #1496c8;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.filtrateList dl {
+  border-top: 1px solid #eaeaea;
+  padding: 0 80px 0 50px;
+  position: relative;
+}
+.filtrateList dl dt {
+  float: left;
+  padding: 13px 0;
+  width: 60px;
+  text-align: center;
+  color: #464646;
+}
+.filtrateList dl dd {
+  float: left;
+  padding: 13px 0 10px 40px;
+  width: 950px;
+  min-height: 23px;
+}
+.filtrateList dl dd .fltTabTo {
+  width: 93px;
+  float: left;
+  padding-bottom: 3px;
+}
+.filtrateList dl dd .fltTabTo a {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 5px;
+  color: #999;
+}
+.filtrateList dl dd .fltTabTo a:hover,
+.filtrateList dl dd .fltTabTo a.cur {
+  background-color: #1496c8;
+  border-radius: 4px;
+  color: #fff;
+}
+.filtrateList dl dd .priceRange {
+  position: absolute;
+  right: 0;
+  top: 13px;
+  color: #00a0e9;
+}
+.filtrateList dl dd .priceRange .sxTxt {
+  width: 49px;
+  height: 18px;
+  line-height: 18px\9;
+  padding: 0 5px;
+  border: 1px solid #00a0e9;
+  border-radius: 4px;
+}
+.filtrateList dl dd .priceRange .sxBtn {
+  background-color: #179bcd;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #fff;
+}
+.filtrateList dl dd .priceRange b{
+    font-weight: normal;
+    color: #999;
+    margin-left: 3px;
+}
+.filtrateList dl dd.otherFlt .fltTabTo {
+  width: 105px;
+}
+.filtrateList dl dd.otherFlt .fltTabTo a:hover,
+.filtrateList dl dd.otherFlt .fltTabTo a.cur {
+  background: none;
+  color: #999;
+}
+.filtrateList dl.yourSel dd span {
+  width: auto;
+  margin-right: 30px;
+}
+.filtrateList dl.yourSel dd span a {
+  background: url(../images/close.png) right center no-repeat;
+  border: 1px solid #1496c8;
+  border-radius: 4px;
+  color: #1496c8;
+  height: 18px;
+  line-height: 18px;
+  padding-right: 18px;
+}
+.filtrateList dl.yourSel dd span a:hover {
+  background-color: #fff;
+  color: #1496c8;
+}
+.filtrateList .selectBox {
+  width: 100px;
+  float: left;
+}
+.filtrateList .selectBox .unfold {
+  background: url(../images/unfold.png) no-repeat;
+  width: 11px;
+  height: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.filtrateList dl.options dd {
+  width: 100%;
+  padding-left: 0;
+}
+.filtrateList dl.options ul li {
+  margin-right: 20px;
+  padding-bottom: 3px;
+  float: left;
+}
+.filtrateList dl.options ul li a {
+  height: 20px;
+  line-height: 20px;
+  color: #999;
+}
+.filtrateList dl.options ul li a:hover,
+.filtrateList dl.options ul li a.cur {
+  color: #1496c8;
+}
+.filtrateList dl.options ul li.isSelBox {
+  width: 230px;
+}
+.filtrateList dl.options ul li.isSelBox select {
+  width: 85px;
+  border: 1px solid #eaeaea;
+  height: 23px;
+  vertical-align: middle;
+}
+.filtrateList dl.options ul li.isSelBox input {
+  background: #179bcd;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #fff;
+  width: 33px;
+  height: 23px;
+  line-height: 23px;
+  border: none;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.filtrateList dl.certificateType .fltTabTo {
+  width: 140px;
+}
+
+/*范围*/
+.scopeCredit {
+  float: left;
+  width: 700px;
+  position: relative;
+  margin-bottom: 5px;
+  margin-left: 9px;
+}
+.showRule {
+  height: auto;
+  overflow: auto;
+}
+.filtrateList .hideFltItem {
+  display: none;
+}
+.levelRangeOk {
+  position: absolute;
+  right: 85px;
+  bottom: 38px;
+  background: #179bcd;
+  border-radius: 5px;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #fff;
+  *overflow: visible;
+}
+
+/*列表
+----------------------------------*/
+.recommend {
+  margin-top: 20px;
+}
+.recommend .hd {
+  padding: 0 80px 0 50px;
+  height: 40px;
+  line-height: 40px;
+}
+.recommend .hd a {
+  color: #464646;
+  margin-right: 40px;
+  position: relative;
+}
+.recommend .hd a img {
+  position: absolute;
+  top: -14px;
+  right: -17px;
+}
+.recommend .hd a:hover,
+.recommend .hd a.cur {
+  color: #1694c8;
+}
+.recommend .hd a.down{
+  background: url(../images/sortDown.png) right center no-repeat;
+  padding-right: 10px;
+}
+.recommend .hd a.up{
+  background: url(../images/sortUp.png) right center no-repeat;
+  padding-right: 10px;
+}
+.recommend .hd a.down_cur{
+  background: url(../images/sortDown_cur.png) right center no-repeat;
+  padding-right: 10px;
+}
+.recommend .hd a.up_cur{
+  background: url(../images/sortUp_cur.png) right center no-repeat;
+  padding-right: 10px;
+}
+.recommend .listItem {
+  margin-top: 20px;
+  padding: 40px 80px 40px 50px;
+  position: relative;
+}
+.recommend .listItem .rightBox {
+  position: relative;
+}
+.recommend .listItem .linkTitle {
+  font-weight: normal;
+}
+.recommend .listItem .linkTitle a {
+  display: inline-block;
+  font-size: 24px;
+  color: #464646;
+  max-width: 580px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.recommend .listItem .linkTitle a:hover {
+  color: #f60;
+}
+.recommend .listItem .linkTitle img {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.recommend .listItem .linkTitle .dujia {
+  width: 48px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border: 1px solid #ff6040;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ff6040;
+  margin-left: 10px;
+}
+.recommend .listItem ul {
+  float: left;
+  margin-top: 20px;
+}
+.recommend .listItem ul li {
+  line-height: 20px;
+  color: #4c4c4c;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+.recommend .listItem ul li span {
+  color: #999;
+  width: 70px;
+  text-align: center;
+  display: inline-block;
+}
+
+.recommend .listItem ul li span.lookhdn_w{
+    color: #4c4c4c;
+    width: auto;
+    text-align: left;
+}
+
+.recommend .listItem ul.storeMark {
+  width: 100%;
+  margin-top: 0;
+}
+.recommend .listItem ul.storeMark li {
+  width: 50%;
+  *width:49.9%;
+  margin-right: 0;
+  line-height: 30px;
+}
+.recommend .listItem ul.storeMark li .markNl {
+  width: 88px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  font-style: normal;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.recommend .listItem ul.storeMark li.mark{
+    text-align:right;
+    width: 455px;
+    text-overflow: clip;
+    -o-text-overflow: clip;
+}
+
+.recommend .listItem ul.markLine2 li {
+  color: #1496c8;
+}
+.recommend .listItem ul.markLine2 li span {
+  color: #1496c8;
+}
+.recommend .dtpfxht {
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+  *margin-right: 5px;
+}
+.recommend .dtpfxht i {
+  display: block;
+  height: 2px;
+  width: 13px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+.recommend .dtpfxht i.red {
+  background: #C6040D;
+}
+.recommend .dtpfxht i.green {
+  background: #018601;
+}
+.recommend .dtpfxht i.over {
+  background: #C6040D;
+}
+.recommend .dtpfxht i.normal {
+  background: #C6040D;
+}
+.recommend .dtpfxht i.lower {
+  background: #018601;
+}
+.recommend .dtpfxht i.default {
+  background: #BCBCBC;
+}
+.recommend .mjmsDetail {
+  display: inline-block;
+  max-width: 85%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+  color: #464646;
+}
+.recommend .mjmsDetail:hover {
+  color: #f60;
+}
+.recommend .Pricebox {
+  width: 135px;
+  text-align: right;
+  position: absolute;
+  top: 43px;
+  right: 0;
+}
+.recommend .Pricebox .price {
+  font-size: 35px;
+  color: #ff6040;
+  line-height: 1;
+}
+.recommend .Pricebox .price span {
+  font-size: 35px;
+}
+.recommend .Pricebox .go-detail {
+  width: 87px;
+  height: 20px;
+  line-height: 20px;
+  color: #ff6040;
+  text-align: center;
+  border: 1px solid #ff6040;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/*拍卖*/
+.auction .recommend .listItem {
+  position: relative;
+}
+.auction .recommend .listItem .imgbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.auction .recommend .listItem .imgbox img {
+  border-top-left-radius: 10px;
+}
+.auction .recommend .listItem .linkTitle {
+  position: relative;
+}
+.auction .recommend .listItem .linkTitle .time {
+  font-size: 14px;
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 37px;
+}
+.auction .recommend .listItem .linkTitle .time span {
+  color: #5a5a5a;
+}
+.auction .recommend .listItem .linkTitle .time span i {
+  font-style: normal;
+  color: #1496c8;
+}
+.auction .recommend .listItem .linkTitle .time .jieshu {
+  font-size: 20px;
+  color: #b1b1b1;
+  margin-left: 30px;
+  vertical-align: middle;
+}
+.auction .recommend .hd {
+  padding: 0 20px 0 50px;
+}
+.auction .recommend .hd a {
+  font-size: 16px;
+  color: #999;
+  margin: 0;
+}
+.auction .recommend .hd a:hover,
+.auction .recommend .hd a.cur {
+  color: #1496c8;
+}
+.auction .recommend .hd span {
+  margin: 0 30px;
+  color: #999;
+}
+.auction .recommend .hd .acdesc {
+  font-size: 14px;
+  color: #46ccf8;
+}
+.auction .recommend .Pricebox {
+  top: 47px;
+}
+.auction .recommend .Pricebox .yinzhang {
+  position: absolute;
+  right: 140px;
+  top: -10px;
+}
+.auction .recommend .Pricebox .desc {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+.lookHidden {
+  width: 83px;
+  height: 20px;
+  color: #ff6040;
+  background: #fff;
+  font-size: 14px !important;
+  margin-left: 4%;
+  border: 1px solid #ff6040 !important;
+  border-radius: 5px;
+}
+
+.taobao .recommend .listItem .linkTitle a{
+    max-width: 700px;
+}
+.tmall .recommend .listItem .linkTitle a{
+    max-width: 810px;
+}
+.tmall .recommend .listItem ul.storeMark li{
+    width: 100%;
+}
+.tmall .recommend .listItem ul.markLine2 li{
+    width: 50%;
+}
+.tmall .recommend .mjmsDetail{
+    max-width: 90%;
+}
+.qita .recommend .listItem .linkTitle a{
+    max-width: 875px;
+}
+.auction .recommend .listItem ul.storeMark li{
+    width: 100%;
+}
+.auction .recommend .listItem ul.markLine2 li{
+    width: 50%;
+}
+.auction .recommend .mjmsDetail{
+    max-width: 90%;
+}
+.recommend .listItem ul.storeMark li.mark{
+    width: 455px;
+}
+
+/*暂未找到心仪网店？*/
+.postwant-lf {
+  background: #fff;
+  padding: 40px 0;
+  border-bottom: 1px solid #f2f2f2;
+  text-align: center;
+}
+.postwant-lf .shixiaoms {
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+  vertical-align: middle;
+  margin-left: 40px;
+  text-align: left;
+}
+.postwant-lf .shixiaoms .title {
+  font-size: 24px;
+  color: #464646;
+  font-weight: normal;
+}
+.postwant-lf .shixiaoms p {
+  font-size: 16px;
+  color: #999;
+}
+.postwant-lf .shixiaoms .zixun {
+  width: 130px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  background: #1496c8;
+  border-radius: 5px;
+}
+.postwant-lf .shixiaoms .zixun img {
+  margin-left: 5px;
+  vertical-align: -2px;
+}
+
+
+@media screen and (max-width: 1220px) {
+  .filtrateList .searchbox {
+      padding: 15px;
+    }
+    .filtrateList dl {
+      padding: 0 20px 0 15px;
+    }
+    .filtrateList dl dd {
+      width: 845px;
+    }
+    .recommend .hd {
+      padding: 0 20px 0 15px;
+    }
+    .recommend .listItem {
+      padding: 40px 20px 40px 15px;
+    }
+    .recommend .listItem ul li {
+      width: 150px;
+    }
+    .recommend .listItem .linkTitle a {
+      max-width: 500px;
+    }
+    .auction .recommend .hd {
+      padding: 0 20px 0 15px;
+    }
+    .auction .recommend .listItem ul.lookstore li {
+      width: 180px;
+    }
+    
+    .taobao .recommend .listItem .linkTitle a{
+	    max-width: 610px;
+	}
+	.tmall .recommend .listItem .linkTitle a{
+	    max-width: 725px;
+	}
+	.qita .recommend .listItem .linkTitle a{
+	    max-width: 790px;
+	}
+    
+    /*范围*/
+    .scopeCredit {
+      width: 595px;
+    }
+}
+                                                                                             

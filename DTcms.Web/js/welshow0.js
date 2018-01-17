@@ -1,0 +1,1 @@
+document.write("<span class=\"welcome\">您好，欢迎来到舞泡(<a href=\"/theuser/guapai.html\" target=\"_blank\">股权代码 200798</a>)！</span><span class=\"login\"><i class=\"user-icon\"></i><a href=\"http://u.5pao.com/wucenter/memberCenter.html\" target=\"_self\">登录</a>/<a href=\"/theuser/toregist.html\" target=\"_self\">免费注册</a></span>");

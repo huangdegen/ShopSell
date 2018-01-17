@@ -256,5 +256,113 @@ namespace DTcms.Web.UI
         }
         #endregion
 
+        protected DataTable get_article_list(
+            string channel_name, 
+            int category_id,
+            int shopStyleId,
+            int regiserStyleId,
+            int chopStyleId,
+            int tradeStyleId,
+            int priceStyleId,
+            int areaId,
+            int deductPointId,
+            int aptitudeId,
+            int takeGoodsId,
+            int supplyGoodsId,
+            int chopTypeId,
+            int chopTransferId,
+            int teamTransferId,
+            int experienceId,
+            int page_size,
+            int page_index, 
+            string strwhere, 
+            out int totalcount, 
+            out string pagelist, 
+            string _key, 
+            params object[] _params)
+        {
+            DataTable dt = new DataTable();
+            if (!string.IsNullOrEmpty(channel_name))
+            {
+                #region 拼接Where条件
+                if (string.IsNullOrEmpty(strwhere)) 
+                {
+                    strwhere += "1=1";
+                }
+                if (shopStyleId != 0) 
+                {
+                    strwhere += " and shop_style_id=" + shopStyleId;
+                }
+                if (regiserStyleId != 0) 
+                {
+                    strwhere += " and regiser_style_id=" + regiserStyleId;
+                }
+                if (chopStyleId != 0) 
+                {
+                    strwhere += " and chop_style_id=" + chopStyleId;
+                }
+                if (tradeStyleId != 0) 
+                {
+                    strwhere += " and trade_style_id=" + tradeStyleId;
+                }
+                if (priceStyleId != 0) 
+                {
+                    strwhere += " and price_style_id=" + priceStyleId;
+                }
+                if (areaId != 0) 
+                {
+                    strwhere += " and area_id=" + areaId;
+                }
+                if (deductPointId != 0) 
+                {
+                    strwhere += " and deduct_point_id=" + deductPointId;
+                }
+                if (aptitudeId != 0) 
+                {
+                    strwhere += " and aptitude_id=" + aptitudeId;
+                }
+                if (takeGoodsId != 0) 
+                {
+                    strwhere += " and take_goods_id=" + takeGoodsId;
+                }
+                if (supplyGoodsId != 0) 
+                {
+                    strwhere += " and supply_goods_id=" + supplyGoodsId;
+                }
+                if (chopTypeId != 0) 
+                {
+                    strwhere += " and chop_type_id=" + chopTypeId;
+                }
+                if (chopTransferId != 0) 
+                {
+                    strwhere += " and chop_transfer_id=" + chopTransferId;
+                }
+                if (teamTransferId != 0) 
+                {
+                    strwhere += " and team_transfer_id=" + teamTransferId;
+                }
+                if (experienceId != 0) 
+                {
+                    strwhere += " and experience_id=" + experienceId;
+                }
+                #endregion
+
+                dt = new BLL.article().ArticleList(channel_name, category_id, page_size, page_index, strwhere, "sort_id asc,add_time desc", out totalcount).Tables[0];
+                pagelist = Utils.OutPageList(page_size, page_index, totalcount, linkurl(_key, _params), 8);
+            }
+            else
+            {
+                totalcount = 0;
+                pagelist = "";
+            }
+            return dt;
+        }
+
+
+        protected string GetDictionaryName(string id) 
+        {
+            BLL.data_dictionary bll = new BLL.data_dictionary();
+            return bll.GetModel(int.Parse(id)).name;
+        }
     }
 }

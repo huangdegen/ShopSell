@@ -91,13 +91,13 @@ namespace DTcms.DAL
 
                         #region 写入导航数据===============
                         int newNavId = new DAL.navigation(databaseprefix).Add(conn, trans, parent_id, "channel_" + model.name, model.title, "", model.sort_id, model.id, "Show");
-                        new DAL.navigation(databaseprefix).Add(conn, trans, newNavId, "channel_" + model.name + "_list", "内容管理", "article/article_list.aspx", 99, model.id, "Show,View,Add,Edit,Delete,Audit");
-                        new DAL.navigation(databaseprefix).Add(conn, trans, newNavId, "channel_" + model.name + "_category", "栏目类别", "article/category_list.aspx", 100, model.id, "Show,View,Add,Edit,Delete");
+                        new DAL.navigation(databaseprefix).Add(conn, trans, newNavId, "channel_" + model.name + "_list", "网店管理", "article/article_list.aspx", 99, model.id, "Show,View,Add,Edit,Delete,Audit");
+                        //new DAL.navigation(databaseprefix).Add(conn, trans, newNavId, "channel_" + model.name + "_category", "栏目类别", "article/category_list.aspx", 100, model.id, "Show,View,Add,Edit,Delete");
                         //开启评论则新增菜单
-                        if (model.is_comment > 0)
-                        {
-                            new DAL.navigation(databaseprefix).Add(conn, trans, newNavId, "channel_" + model.name + "_comment", "评论管理", "article/comment_list.aspx", 103, model.id, "Show,View,Delete,Reply");
-                        }
+                        //if (model.is_comment > 0)
+                        //{
+                        //    new DAL.navigation(databaseprefix).Add(conn, trans, newNavId, "channel_" + model.name + "_comment", "评论管理", "article/comment_list.aspx", 103, model.id, "Show,View,Delete,Reply");
+                        //}
                         #endregion
 
                         trans.Commit();//提交事务

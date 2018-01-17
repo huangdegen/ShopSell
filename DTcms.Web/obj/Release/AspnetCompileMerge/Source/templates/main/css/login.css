@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/*登录
+--------------------------------------*/
+.Login{
+    position: relative;
+    height: 385px;
+}
+.Login1{
+    background: url(../images/login_bg-1.jpg) center top no-repeat;
+    width: 100%;
+    height: 110px;
+}
+.Login2{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/login_bg-2.jpg) center top no-repeat;
+    width: 100%;
+    height: 215px;
+    z-index: -1;
+}
+.Login3{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(../images/login_bg-3.jpg) center top no-repeat;
+    width: 100%;
+    height: 170px;
+    z-index: -1;
+}
+.Login4{
+    background: url(../images/login_bg-4.jpg) center top no-repeat;
+    width: 100%;
+    height: 104px;
+}
+.Login_main{
+    width: 520px;
+    height: 384px;
+    background: #fff;
+    border-radius: 10px;
+    float: right;
+}
+.Login_main .main{
+    padding: 30px 60px 0 60px;
+}
+.Login_main .main .hd{
+    font-size: 24px;
+    color: #464646;
+}
+.Login_main .main .bd{
+    margin-top: 10px;
+}
+.form_item{
+    padding-top: 20px;
+    width: 100%;
+    position: relative;
+}
+.form_item .form_txt{
+    border: 0;
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    height: 35px;
+    line-height: 35px\9;
+    font-size: 14px;
+    color: #b2b2b2;
+}
+.form_item img{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.form_item img.yzm{
+    bottom: 5px;
+    width: 75px;
+    height: 28px;
+}
+.form_item a{
+    line-height: 40px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.form_item .subBtn{
+    background: #1694c8;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+}
+.form_item .subBtn:hover{
+    background: #088dc4;
+}
+.form_tips{
+    padding-top: 10px;
+    font-size: 13px;
+    color: red;
+    line-height: 1.2;
+}
+
+
+@media screen and (max-width: 1220px) {
+    .Login_main{
+        width: 440px;
+    }
+    .Login_main .main{
+        padding: 30px 40px 0 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Login{
+        height: 383px;
+        margin-top: -1.6px;
+    }
+    .Login4{
+        margin-top: -2px;
+    }
+}
+

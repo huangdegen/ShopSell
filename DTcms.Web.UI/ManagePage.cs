@@ -4,6 +4,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI.WebControls;
 using DTcms.Common;
+using System.Data;
 
 namespace DTcms.Web.UI
 {
@@ -138,5 +139,37 @@ namespace DTcms.Web.UI
         }
         #endregion
 
+
+        public DropDownList DataDictionaryBind(DropDownList DropDownList, int type)
+        {
+            BLL.data_dictionary bll = new BLL.data_dictionary();
+            DataTable dt = bll.GetList("type="+type).Tables[0];
+
+            DropDownList.Items.Clear();
+            DropDownList.Items.Add(new ListItem("--请选择--", ""));
+            foreach (DataRow dr in dt.Rows)
+            {
+                string Id = dr["id"].ToString();
+                string name = dr["name"].ToString().Trim();
+                DropDownList.Items.Add(new ListItem(name, Id));
+            }
+            return DropDownList;
+        }
+
+        public DropDownList PriceStyleBind(DropDownList PriceStyleList,int type) 
+        {
+            BLL.price_style bll = new BLL.price_style();
+            DataTable dt = bll.GetList("type=" + type).Tables[0];
+
+            PriceStyleList.Items.Clear();
+            PriceStyleList.Items.Add(new ListItem("--请选择--", ""));
+            foreach (DataRow dr in dt.Rows)
+            {
+                string Id = dr["id"].ToString();
+                string text = dr["min_price"].ToString().Trim()+"万-"+dr["max_price"].ToString().Trim()+"万";
+                PriceStyleList.Items.Add(new ListItem(text, Id));
+            }
+            return PriceStyleList;
+        }
     }
 }

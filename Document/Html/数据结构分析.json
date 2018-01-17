@@ -1,0 +1,215 @@
+所在平台|PlatForm
+	编号|Id
+	平台名称|Name
+	Init:{'天猫商城'}
+
+商城类型|ShopStyle
+	编号|Id
+	类型名称|Name
+	Init:{'旗舰店','专营店','专卖店'}
+	
+注册类型:RegiserStyle
+		编号|Id
+		描述|Remark
+		Init:{'个人身份证认证','企业执照认证','个体户营业执照认证'}
+
+商标类型|ChopStyle
+	编号|Id
+	类型名称|Name
+	Init:{'R标','TM标'}
+	
+所属行业|TradeStyle
+	编号|Id
+	行业名称|Name
+	Init:{'服饰鞋包','美容护理','数码电器','母婴','运动户外','家居家饰'}
+
+价格|PriceStyle
+	编号|Id
+	最低价|MinPrice
+	最高价价|MaxPrice
+	Init:[{'5万','10万'},{'10万','20万'},{'20万','50万'},{'50万','以上'}]
+
+其他
+	地区范围|Area
+		编号|Id
+		地区名称|Name
+		Init:{'不限','华北','华东','东北','华南','西北','华中','西南','海外'}
+	
+	扣分情况|DeductPoint
+		编号|Id
+		描述|Remark
+		Init:{'不限','全无扣分','有一般违规扣分','有严重违规扣分','有售假违规扣分'}
+	
+	纳税人资质|Aptitude
+		编号|Id
+		描述|Remark
+		Init:{'不限','一般纳税人','小规模纳税人'}
+		
+	是否带货|TakeGoods
+		编号|Id
+		描述|Remark
+		Init:{'不限','是','否'}
+		
+	提供货源|SupplyGoods
+		编号|Id
+		描述|Remark
+		Init:{'不限','是','否'}
+		
+	商标类别|ChopType
+		编号|Id
+		描述|Remark
+		Init:{'不限','第01类','第02类','第03类','第04类','第05类','第06类','第07类','第08类','第09类','第10类'}
+		
+	商标过户|ChopTransfer
+		编号|Id
+		描述|Remark
+		Init:{'不限','可以过户','只能授权'}
+		
+	团队转让|TeamTransfer
+		编号|Id
+		描述|Remark
+		Init:{'不限','是','否'}
+	
+	
+		
+//http://www.5pao.com/shopmm/shopsGet-202054.html
+//s0-100
+//允许字母、下划线，100个字符内
+店铺信息:
+	交易类型:类型编号[ok,init:{网店出售,网店拍卖}]
+	所在平台:平台编号[ok]	
+	所属行业:行业编号[ok]
+	所在地区:地区编号[ok]
+	商城类型:类型编号[ok]
+	商标类型:类型编号[ok]
+	纳税人资质:资质编号[ok]
+	
+	消保金|FireInsurance[***]
+	技术年费|TechnologyFee[***]
+	//动态评分/半年内动态评分:宝贝与描述相符、卖家的服务态度、卖家的发货速度[***]
+	违规扣分:一般违规、严重违规、售假违规
+	提供货源/货源渠道:[ok]
+	是否带货:是否带货编号[ok]
+	团队转让:团队转让编号[ok]
+	运营经验|Experience[ok]
+	卖家描述|zhaiyao[ok]
+	一级类目:允许多个[***]
+	
+	标题|Title[ok]
+	官方估价|OfficalPrice[ok]
+	实际报价|ActualPrice[ok]
+	技术年费|TechnologyFee[***]
+	店铺编号|ShopNo[ok]
+	一般违规[***]
+	严重违规[***]
+	售假违规[***]
+	
+	店铺截图=图片相册[ok]
+	店铺交易月报:店铺月报编号
+	常见问题
+	购买流程
+	
+	店铺地址|ShopUrl[***]
+	旺旺名称或店铺掌柜名|WangWangName[***]
+	开店时间|OpenTime[***]
+	月利润|MonthProfit[***]
+	去年销售额|LastYearProfit[***]
+	店铺好评率|GoodOpinion
+	视频地址|VideoUrl
+	同类店铺[非数据库字段]
+	服务顾问:多个
+	
+
+店铺截图
+	编号|Id
+	店铺编号|ShopId
+	图片地址|Url
+	描述|Remark
+
+店铺交易月报|BusinessMonthReport
+	编号|Id
+	统计日期
+	浏览量	
+	访客数
+	支付商品件数
+	支付买家数
+	客单价
+	支付转化率
+	支付金额
+
+常见问题|Question
+	编号|Id
+	问题|Question
+	答案|Answer
+
+服务顾问|ServiveAdviser
+	编号|Id
+	头像|Img
+	类别|Type:{'黄金销售','白金销售','销售顾问'}
+	姓名|UserName
+	工号|JobNo
+	QQ号|QQ
+	评分|Score
+	
+消费者说|Customer
+	编号|Id
+	期数/编号|Tranche
+	图片|Img
+	店铺信息:交易标题、商城类型、	商标类型、一级类目、网店价格
+	店主介绍:店主称呼、舞泡账号、交易类型、入行时间、擅长类目
+	采访记录图片|RecordImg
+	采访内容|Content
+	
+个人信息|User
+	编号|Id
+	用户名|UserName
+	密码|Password
+	真实姓名|RealName
+	性别|Sex
+	出生日期|Birthday
+	手机号码|mobile
+	QQ号码|QQ
+	安全邮箱|Email
+	支付密码|PayPassword
+	密保问题|SafeQuestion
+	密保答案|SafeAnswer
+
+
+网店拍卖|ShopAuction
+	编号|Id
+	起拍价|StartPrice
+	当前价|CurrentPrice
+	加价幅度|MinAdd
+	延时周期|TimeLimit 分钟
+	消保金|FireInsurance
+	技术年费|TechnologyFee
+	
+	竞价规则（非数据库设计）
+		出价基本规则
+		出价延时介绍
+		保证金介绍
+		其他常见问题
+	竞拍协议
+		签约主体
+		立约背景
+		协议生效和适用范围
+		定义
+		参与竞拍的条件
+		竞拍服务及买家义务
+		买家竞拍不买的责任
+		协议终止
+		免责及有限责任
+		其他约定
+		授权书
+	保证金须知
+		保证金流程
+		保证金释放
+		保证金扣除
+		
+拍卖记录|AuctionRecord
+	编号|Id
+	竞拍人|UserName
+	价格|Price
+	时间|AddTime
+	状态|Status
+	

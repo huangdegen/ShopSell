@@ -39,6 +39,38 @@ namespace DTcms.Model
         private string _user_name;
         private DateTime _add_time = DateTime.Now;
         private DateTime? _update_time;
+
+        //商城类型
+        private int _shop_style_id = 0;
+        //注册类型
+        private int _regiser_style_id=0;
+        //商标类型
+        private int _chop_style_id=0;
+        //所属行业
+        private int _trade_style_id=0;
+        //价格
+        private int _price_style_id = 0;
+        //地区范围
+        private int _area_id=0;
+        //扣分情况
+        private int _deduct_point_id=0;
+        //纳税人资质
+        private int _aptitude_id=0;
+        //是否带货
+        private int _take_goods_id=0;
+        //提供货源
+        private int _supply_goods_id=0;
+        //商标类别
+        private int _chop_type_id=0;
+        //商标过户
+        private int _chop_transfer_id=0;
+        //团队转让
+        private int _team_transfer_id=0;
+        //经验传授
+        private int _experience_id=0;
+        #endregion
+
+        #region
         /// <summary>
         /// 自增ID
         /// </summary>
@@ -296,6 +328,131 @@ namespace DTcms.Model
             get { return _group_price; }
         }
 
+        /// <summary>
+        /// 商城类型 
+        /// </summary>
+        public int shop_style_id
+        {
+            set { _shop_style_id = value; }
+            get { return _shop_style_id; }
+        }
+
+        /// <summary>
+        /// 注册类型
+        /// </summary>
+        public int regiser_style_id 
+        {
+            set { _regiser_style_id = value; }
+            get { return _regiser_style_id; }
+        }
+        
+        /// <summary>
+        /// 商标类型
+        /// </summary>
+        public int chop_style_id
+        {
+            set { _chop_style_id = value; }
+            get { return _chop_style_id; }
+        }
+
+        /// <summary>
+        /// 所属行业
+        /// </summary>
+        public int trade_style_id
+        {
+            set { _trade_style_id = value; }
+            get { return _trade_style_id; }
+        }
+
+        /// <summary>
+        /// 价格范围
+        /// </summary>
+        public int price_style_id 
+        {
+            set { _price_style_id = value; }
+            get { return _price_style_id; }
+            
+        }
+        /// <summary>
+        /// 地区范围
+        /// </summary>
+        public int area_id
+        {
+            set { _area_id = value; }
+            get { return _area_id; }
+        }
+
+        /// <summary>
+        /// 扣分情况
+        /// </summary>
+        public int deduct_point_id
+        {
+            set { _deduct_point_id = value; }
+            get { return _deduct_point_id; }
+        }
+
+        /// <summary>
+        /// 纳税人资质
+        /// </summary>
+        public int aptitude_id
+        {
+            set { _aptitude_id = value; }
+            get { return _aptitude_id; }
+        }
+
+        /// <summary>
+        /// 是否带货
+        /// </summary>
+        public int take_goods_id
+        {
+            set { _take_goods_id = value; }
+            get { return _take_goods_id; }
+        }
+
+        /// <summary>
+        /// 提供货源
+        /// </summary>
+        public int supply_goods_id
+        {
+            set { _supply_goods_id = value; }
+            get { return _supply_goods_id; }
+        }
+
+        /// <summary>
+        /// 商标类别
+        /// </summary>
+        public int chop_type_id
+        {
+            set { _chop_type_id = value; }
+            get { return _chop_type_id; }
+        }
+
+        /// <summary>
+        /// 商标过户
+        /// </summary>
+        public int chop_transfer_id
+        {
+            set { _chop_transfer_id = value; }
+            get { return _chop_transfer_id; }
+        }
+
+        /// <summary>
+        /// 团队转让
+        /// </summary>
+        public int team_transfer_id
+        {
+            set { _team_transfer_id = value; }
+            get { return _team_transfer_id; }
+        }
+
+        /// <summary>
+        /// 经验传授
+        /// </summary>
+        public int experience_id
+        {
+            set { _experience_id = value; }
+            get { return _experience_id; }
+        }
         #endregion
     }
 }

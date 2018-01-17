@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/*注册
+--------------------------------------*/
+.mt-15 {
+  margin-top: 15px;
+}
+.Regist {
+}
+.Regist .main {
+  padding: 50px 0 110px;
+  margin-left: 30px;
+  color: #464646;
+}
+.Regist .hd h2 {
+  font-size: 24px;
+  color: #464646;
+  font-weight: normal;
+}
+.Regist .hd .tip {
+  font-size: 16px;
+  color: #b2b2b2;
+  margin-left: 170px;
+}
+.Regist .hd .tip span {
+  color: #464646;
+}
+.Regist .bd {
+  margin-top: 35px;
+  position: relative;
+}
+.Regist .bd .error {
+    position: absolute;
+    left: 0;
+    top: -26px;
+    color: #ff6040;
+}
+.Regist .bd .registBtn {
+  width: 410px;
+  height: 40px;
+  background-color: #1694c8;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  margin-top: 15px;
+}
+.frm_item {
+  padding-bottom: 15px;
+}
+.frm_item .itembox {
+  width: 410px;
+  height: 40px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  position: relative;
+}
+.frm_item .frm_txt {
+  width: 343px;
+  height: 38px;
+  line-height: 38px\9;
+  padding: 0 10px 0 55px;
+  font-size: 14px;
+  color: #b2b2b2;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.frm_item .frm_txt1 {
+  width: 255px;
+  padding-right: 98px;
+}
+.frm_item .frm_txt2 {
+  width: 132px;
+}
+.frm_item .imgbox {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+.frm_item .imgbox img {
+  margin-top: 10px;
+}
+.frm_item .yzm {
+  position: absolute;
+  right: 9px;
+  top: 4px;
+}
+.frm_item .yzm img {
+  width: 80px;
+  height: 32px;
+}
+.frm_item .tips {
+  margin-left: 25px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #b2b2b2;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position:relative;
+}
+.frm_item .fuhe{
+  color: #1694c8;
+  font-size: 24px;
+}
+.frm_item .colr-red{
+	background: url(../../images/reg/tip.png) left center no-repeat;
+	padding-left: 21px;
+  	color: #fe5f3f;
+}
+.frm_item .gainBtn {
+  width: 166px;
+  height: 40px;
+  background-color: #d6d6d6;
+  font-size: 14px;
+  color: #464646;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+.frm_item .check {
+  vertical-align: -2px;
+}
+.frm_item label {
+  cursor: pointer;
+}
+

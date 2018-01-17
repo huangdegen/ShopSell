@@ -42,7 +42,8 @@ namespace DTcms.Web.admin.article
             if (!Page.IsPostBack)
             {
                 ChkAdminLevel("channel_" + this.channel_name + "_list", DTEnums.ActionEnum.View.ToString()); //检查权限
-                TreeBind(this.channel_id); //绑定类别
+                TreeBind(1); //绑定类别
+                //TreeBind(this.channel_id); //绑定类别
                 RptBind(this.channel_id, this.category_id, "id>0" + CombSqlTxt(this.keywords, this.property), "sort_id asc,add_time desc,id desc");
             }
         }
@@ -50,11 +51,12 @@ namespace DTcms.Web.admin.article
         #region 绑定类别=================================
         private void TreeBind(int _channel_id)
         {
+            #region
             BLL.article_category bll = new BLL.article_category();
-            DataTable dt = bll.GetList(0, _channel_id);
+            DataTable dt = bll.GetList(0, 0);
 
             this.ddlCategoryId.Items.Clear();
-            this.ddlCategoryId.Items.Add(new ListItem("所有类别", ""));
+            this.ddlCategoryId.Items.Add(new ListItem("--请选择--", ""));
             foreach (DataRow dr in dt.Rows)
             {
                 string Id = dr["id"].ToString();
@@ -72,6 +74,7 @@ namespace DTcms.Web.admin.article
                     this.ddlCategoryId.Items.Add(new ListItem(Title, Id));
                 }
             }
+            #endregion
         }
         #endregion
 

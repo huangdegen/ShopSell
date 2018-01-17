@@ -81,6 +81,11 @@ namespace DTcms.Web.UI
             return new BLL.article_category().GetChildList(top, parent_id, channel_name);
         }
 
+        protected DataTable getDefaultCategory(int parent_id,int channel_id) 
+        {
+            BLL.article_category bll = new BLL.article_category();
+            return bll.GetList(parent_id, channel_id);
+        }
         #region 私有方法===========================================
         /// <summary>
         /// 递归找到父节点

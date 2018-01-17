@@ -58,7 +58,8 @@ namespace DTcms.Web.admin.article
                 ChkAdminLevel("channel_" + this.channelModel.name + "_list", DTEnums.ActionEnum.View.ToString()); //检查权限
                 ShowSysField(this.channel_id); //显示相应的默认控件
                 GroupBind(string.Empty); //绑定用户组
-                TreeBind(this.channel_id); //绑定类别
+                //TreeBind(this.channel_id); //绑定类别
+                TreeBind(0); //绑定类别
                 if (action == DTEnums.ActionEnum.Edit.ToString() || action == DTEnums.ActionEnum.Copy.ToString()) //修改
                 {
                     ShowInfo(this.channel_id, this.id);
@@ -327,11 +328,12 @@ namespace DTcms.Web.admin.article
         #region 绑定类别=================================
         private void TreeBind(int _channel_id)
         {
+            #region 
             BLL.article_category bll = new BLL.article_category();
             DataTable dt = bll.GetList(0, _channel_id);
 
             this.ddlCategoryId.Items.Clear();
-            this.ddlCategoryId.Items.Add(new ListItem("请选择类别...", ""));
+            this.ddlCategoryId.Items.Add(new ListItem("--请选择--.", ""));
             foreach (DataRow dr in dt.Rows)
             {
                 string Id = dr["id"].ToString();
@@ -349,6 +351,23 @@ namespace DTcms.Web.admin.article
                     this.ddlCategoryId.Items.Add(new ListItem(Title, Id));
                 }
             }
+            #endregion
+
+            DataDictionaryBind(this.ddlShopStyle, 1);
+            DataDictionaryBind(this.ddlRegiserStyle, 2);
+            DataDictionaryBind(this.ddlChopStyle, 3);
+            DataDictionaryBind(this.ddlTradeStyle, 4);
+            PriceStyleBind(this.ddlPriceStyle, 1);
+            DataDictionaryBind(this.ddlArea, 5);
+            DataDictionaryBind(this.ddlDeductPoint, 6);
+            DataDictionaryBind(this.ddlAptitude, 7);
+            DataDictionaryBind(this.ddlTakeGoods, 8);
+            DataDictionaryBind(this.ddlSupplyGoods, 8);
+            DataDictionaryBind(this.ddlChopType, 9);
+            DataDictionaryBind(this.ddlChopTransfer, 10);
+            DataDictionaryBind(this.ddlTeamTransfer, 8);
+            DataDictionaryBind(this.ddlExperience, 8);
+            //PriceStyleBind(this.ddlPriceStyle, 1);
         }
         #endregion
 
@@ -381,6 +400,7 @@ namespace DTcms.Web.admin.article
             BLL.article bll = new BLL.article();
             Model.article model = bll.GetModel(_channel_id, _id);
 
+            #region 系统字段
             ddlCategoryId.SelectedValue = model.category_id.ToString();
             txtCallIndex.Text = model.call_index;
             txtTitle.Text = model.title;
@@ -431,7 +451,9 @@ namespace DTcms.Web.admin.article
             {
                 cblItem.Items[4].Selected = true;
             }
-            //扩展字段赋值
+            #endregion
+
+            #region //扩展字段赋值
             List<Model.article_attribute_field> ls1 = new BLL.article_attribute_field().GetModelList(this.channel_id, "");
             foreach (Model.article_attribute_field modelt1 in ls1)
             {
@@ -509,17 +531,23 @@ namespace DTcms.Web.admin.article
                         break;
                 }
             }
-            //绑定图片相册
+            #endregion
+
+            #region//绑定图片相册
             if (filename.StartsWith("thumb_"))
             {
                 hidFocusPhoto.Value = model.img_url; //封面图片
             }
             rptAlbumList.DataSource = model.albums;
             rptAlbumList.DataBind();
-            //绑定内容附件
+            #endregion
+
+            #region//绑定内容附件
             rptAttachList.DataSource = model.attach;
             rptAttachList.DataBind();
-            //赋值用户组价格
+            #endregion
+
+            #region //赋值用户组价格
             if (model.group_price != null)
             {
                 for (int i = 0; i < this.rptPrice.Items.Count; i++)
@@ -535,6 +563,24 @@ namespace DTcms.Web.admin.article
                     }
                 }
             }
+            #endregion
+
+            #region 高级选项
+            ddlRegiserStyle.SelectedValue = model.regiser_style_id.ToString();
+            ddlShopStyle.SelectedValue = model.shop_style_id.ToString();
+            ddlChopStyle.SelectedValue = model.chop_style_id.ToString();
+            ddlTradeStyle.SelectedValue = model.trade_style_id.ToString();
+            ddlPriceStyle.SelectedValue = model.price_style_id.ToString();
+            ddlArea.SelectedValue = model.area_id.ToString();
+            ddlDeductPoint.SelectedValue = model.deduct_point_id.ToString();
+            ddlAptitude.SelectedValue = model.aptitude_id.ToString();
+            ddlTakeGoods.SelectedValue = model.take_goods_id.ToString();
+            ddlSupplyGoods.SelectedValue = model.supply_goods_id.ToString();
+            ddlChopType.SelectedValue = model.chop_type_id.ToString();
+            ddlChopTransfer.SelectedValue = model.chop_transfer_id.ToString();
+            ddlTeamTransfer.SelectedValue = model.team_transfer_id.ToString();
+            ddlExperience.SelectedValue = model.experience_id.ToString();
+            #endregion
         }
         #endregion
 
@@ -618,6 +664,7 @@ namespace DTcms.Web.admin.article
         #region 增加操作=================================
         private bool DoAdd()
         {
+            #region
             bool result = false;
             Model.article model = new Model.article();
             BLL.article bll = new BLL.article();
@@ -683,6 +730,7 @@ namespace DTcms.Web.admin.article
             }
             model.add_time = Utils.StrToDateTime(txtAddTime.Text.Trim());
             model.fields = SetFieldValues(this.channel_id); //扩展字段赋值
+            #endregion
 
             #region 保存相册====================
             //检查是否有自定义图片
@@ -747,6 +795,24 @@ namespace DTcms.Web.admin.article
 
             #endregion
 
+            #region 高级选项
+            model.category_id = Utils.StrToInt(ddlCategoryId.SelectedValue, 0);
+            model.shop_style_id = Utils.StrToInt(ddlShopStyle.SelectedValue, 0);
+            model.regiser_style_id = Utils.StrToInt(ddlRegiserStyle.SelectedValue, 0);
+            model.chop_style_id = Utils.StrToInt(ddlChopStyle.SelectedValue, 0);
+            model.trade_style_id = Utils.StrToInt(ddlTradeStyle.SelectedValue, 0);
+            model.price_style_id = Utils.StrToInt(ddlPriceStyle.SelectedValue, 0);
+            model.area_id = Utils.StrToInt(ddlArea.SelectedValue, 0);
+            model.deduct_point_id = Utils.StrToInt(ddlDeductPoint.SelectedValue, 0);
+            model.aptitude_id = Utils.StrToInt(ddlAptitude.SelectedValue, 0);
+            model.take_goods_id = Utils.StrToInt(ddlTakeGoods.SelectedValue, 0);
+            model.supply_goods_id = Utils.StrToInt(ddlSupplyGoods.SelectedValue, 0);
+            model.chop_type_id = Utils.StrToInt(ddlChopType.SelectedValue, 0);
+            model.chop_transfer_id = Utils.StrToInt(ddlChopTransfer.SelectedValue, 0);
+            model.team_transfer_id = Utils.StrToInt(ddlTeamTransfer.SelectedValue, 0);
+            model.experience_id = Utils.StrToInt(ddlExperience.SelectedValue, 0);
+            #endregion
+
             if (bll.Add(model) > 0)
             {
                 AddAdminLog(DTEnums.ActionEnum.Add.ToString(), "添加" + this.channelModel.title + "频道内容:" + model.title); //记录日志
@@ -759,6 +825,7 @@ namespace DTcms.Web.admin.article
         #region 修改操作=================================
         private bool DoEdit(int _id)
         {
+            #region 基础字段
             bool result = false;
             BLL.article bll = new BLL.article();
             Model.article model = bll.GetModel(this.channel_id, _id);
@@ -823,6 +890,7 @@ namespace DTcms.Web.admin.article
             model.add_time = Utils.StrToDateTime(txtAddTime.Text.Trim());
             model.update_time = DateTime.Now;
             model.fields = SetFieldValues(this.channel_id); //扩展字段赋值
+            #endregion
 
             #region 保存相册====================
             //检查是否有自定义图片
@@ -899,6 +967,24 @@ namespace DTcms.Web.admin.article
                 priceList.Add(new Model.user_group_price { id = hidPriceId, channel_id = this.channel_id, article_id = _id, group_id = hidGroupId, price = _price });
             }
             model.group_price = priceList;
+            #endregion
+
+            #region 高级选项
+            model.category_id = Utils.StrToInt(ddlCategoryId.SelectedValue, 0);
+            model.shop_style_id = Utils.StrToInt(ddlShopStyle.SelectedValue, 0);
+            model.regiser_style_id=Utils.StrToInt(ddlRegiserStyle.SelectedValue,0);
+            model.chop_style_id = Utils.StrToInt(ddlChopStyle.SelectedValue, 0);
+            model.trade_style_id=Utils.StrToInt(ddlTradeStyle.SelectedValue,0);
+            model.price_style_id = Utils.StrToInt(ddlPriceStyle.SelectedValue, 0);
+            model.area_id=Utils.StrToInt(ddlArea.SelectedValue,0);
+            model.deduct_point_id=Utils.StrToInt(ddlDeductPoint.SelectedValue,0);
+            model.aptitude_id=Utils.StrToInt(ddlAptitude.SelectedValue,0);
+            model.take_goods_id=Utils.StrToInt(ddlTakeGoods.SelectedValue,0);
+            model.supply_goods_id=Utils.StrToInt(ddlSupplyGoods.SelectedValue,0);
+            model.chop_type_id=Utils.StrToInt(ddlChopType.SelectedValue,0);
+            model.chop_transfer_id = Utils.StrToInt(ddlChopTransfer.SelectedValue, 0);
+            model.team_transfer_id=Utils.StrToInt(ddlTeamTransfer.SelectedValue,0);
+            model.experience_id=Utils.StrToInt(ddlExperience.SelectedValue,0);
             #endregion
 
             if (bll.Update(model))

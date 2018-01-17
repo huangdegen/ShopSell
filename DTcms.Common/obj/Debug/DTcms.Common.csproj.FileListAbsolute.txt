@@ -22,3 +22,4 @@ D:\黄德根\舞泡网仿站\DTcms.Common\bin\Debug\DTcms.Common.dll
 D:\黄德根\舞泡网仿站\DTcms.Common\bin\Debug\DTcms.Common.pdb
 D:\黄德根\舞泡网仿站\DTcms.Common\obj\Debug\DTcms.Common.dll
 D:\黄德根\舞泡网仿站\DTcms.Common\obj\Debug\DTcms.Common.pdb
+D:\黄德根\舞泡网仿站\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache

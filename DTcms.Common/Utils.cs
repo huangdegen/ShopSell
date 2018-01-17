@@ -998,26 +998,26 @@ namespace DTcms.Common
             }
             StringBuilder pageStr = new StringBuilder();
             string pageId = "__id__";
-            string firstBtn = "<a href=\"" + ReplaceStr(linkUrl, pageId, (pageIndex - 1).ToString()) + "\">«上一页</a>";
-            string lastBtn = "<a href=\"" + ReplaceStr(linkUrl, pageId, (pageIndex + 1).ToString()) + "\">下一页»</a>";
+            string firstBtn = "<a href=\"" + ReplaceStr(linkUrl, pageId, (pageIndex - 1).ToString()) + "\" class=\"w100\">«上一页</a>";
+            string lastBtn = "<a href=\"" + ReplaceStr(linkUrl, pageId, (pageIndex + 1).ToString()) + "\" class=\"w100\">下一页»</a>";
             string firstStr = "<a href=\"" + ReplaceStr(linkUrl, pageId, "1") + "\">1</a>";
             string lastStr = "<a href=\"" + ReplaceStr(linkUrl, pageId, pageCount.ToString()) + "\">" + pageCount.ToString() + "</a>";
 
             if (pageIndex <= 1)
             {
-                firstBtn = "<span class=\"disabled\">«上一页</span>";
+                firstBtn = "<a class=\"disabled w100\">«上一页</a>";
             }
             if (pageIndex >= pageCount)
             {
-                lastBtn = "<span class=\"disabled\">下一页»</span>";
+                lastBtn = "<a class=\"disabled w100\">下一页»</a>";
             }
             if (pageIndex == 1)
             {
-                firstStr = "<span class=\"current\">1</span>";
+                firstStr = "<a class=\"cur\">1</span>";
             }
             if (pageIndex == pageCount)
             {
-                lastStr = "<span class=\"current\">" + pageCount.ToString() + "</span>";
+                lastStr = "<a class=\"cur\">" + pageCount.ToString() + "</a>";
             }
             int firstNum = pageIndex - (centSize / 2); //中间开始的页码
             if (pageIndex < centSize)
@@ -1025,17 +1025,17 @@ namespace DTcms.Common
             int lastNum = pageIndex + centSize - ((centSize / 2) + 1); //中间结束的页码
             if (lastNum >= pageCount)
                 lastNum = pageCount - 1;
-            pageStr.Append("<span>共" + totalCount + "记录</span>");
+            pageStr.Append("<a style=\"width: 70px;border: none;\">共" + totalCount + "记录</a>");
             pageStr.Append(firstBtn + firstStr);
             if (pageIndex >= centSize)
             {
-                pageStr.Append("<span>...</span>\n");
+                pageStr.Append("<a>...</a>\n");
             }
             for (int i = firstNum; i <= lastNum; i++)
             {
                 if (i == pageIndex)
                 {
-                    pageStr.Append("<span class=\"current\">" + i + "</span>");
+                    pageStr.Append("<a class=\"cur\">" + i + "</a>");
                 }
                 else
                 {
@@ -1044,7 +1044,7 @@ namespace DTcms.Common
             }
             if (pageCount - pageIndex > centSize - ((centSize / 2)))
             {
-                pageStr.Append("<span>...</span>");
+                pageStr.Append("<a>...</a>");
             }
             pageStr.Append(lastStr + lastBtn);
             return pageStr.ToString();
@@ -1290,6 +1290,18 @@ namespace DTcms.Common
             return urlPage;
         }
         #endregion
+
+        public static string strSelected(int current, int value, string className)
+        {
+            if (current == value)
+            {
+                return className;
+            }
+            else
+            {
+                return "";
+            }
+        }
 
     }
 }

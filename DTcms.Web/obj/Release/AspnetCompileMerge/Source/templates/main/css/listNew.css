@@ -1,0 +1,259 @@
+@charset "utf-8";
+.wrap,input,select{font-family:'Microsoft Yahei'; font-size:14px; color:#4b4b4b;}
+.wrap{width:1190px;}
+
+/*筛选条件
+----------------------------------*/
+.filtrateList{width:890px; border:1px solid #e4e4e4; float:left; line-height:24px; position:relative; z-index:15;}
+.filtrateList dl{border-bottom:1px dotted #e6eaec; float:left; background:#fafafa; position:relative;}
+.filtrateList dl dt{width:91px; text-align:center; padding:9px 0; float:left; border-left:1px solid #fff;}
+.filtrateList dl dd{float:left; padding:9px 0 6px 10px; width:788px; background:#fff;min-height:27px;}
+.filtrateList dd .fltTabTo{width:98px; float:left; padding-bottom:3px;}
+.filtrateList dd .fltTabTo a{float:left; height:24px; line-height:24px; padding:0 5px; color:#4b4b4b;}
+.filtrateList dd .fltTabTo a:hover, .filtrateList dd span a.cur{background:#4286b2; color:#fff;}
+.filtrateList dd .fltTabTo img{float:left; margin-top:3px; margin-left:5px;}
+
+.filtrateList dd .fltTabTo .shuang{background: url(../../images/0301/shuang11.png) center center no-repeat; width: 55px;}
+.filtrateList dd .fltTabTo .shuang:hover, .filtrateList dd .fltTabTo .shyicur{background: url(../../images/0301/shuang11-1.png) center center no-repeat;  background-color: #4286b2; width: 55px;}
+
+.filtrateList dl.yourSel{background:#fff; border-top:0;}
+.filtrateList dl.yourSel dd span{width:auto; margin-right:30px;}
+.filtrateList dl.yourSel dd span a{border:1px solid #4286b2; height:22px; line-height:22px; padding-right:22px; background:url(../../images/k150227/listIcon20w.png) right -130px no-repeat; color:#4286b2;}
+.filtrateList dl.yourSel dd span a:hover{color:#4286b2; background:url(../../images/k150227/listIcon20w.png) right -130px no-repeat;}
+.filtrateList dd.otherSel{position:absolute; background:#4286b2;min-height:24px;height:24px; right:10px; top:9px; padding:0; text-align:center; color:#fff; cursor:pointer;}
+.filtrateList dd.otherSel:hover{background-color:#4EC5E9;}
+.filtrateList .selectBox{border:1px solid #e5e5e5; width: 165px; float:left; height:23px;}
+.selectBox .selected{text-indent:6px; width: 140px; float:left; height:23px; line-height:23px\9; border:0;} 
+.selectBox .dropdown{width:21px; height:23px; background:url(../../images/k150227/listIcon20w.png) right -87px no-repeat; cursor:pointer; float:right;}
+.selectBox ul{border:1px solid #e5e5e5; background:#fff; min-width:100%; text-indent:6px; position:absolute; left:-1px; top:23px;cursor:pointer;}
+.selectBox ul li{line-height:25px; height:25px; white-space:nowrap; min-width:100%;}
+.selectBox ul li:hover{background:#3CACDF; color:#fff;}
+
+.selectBox ul li.isSelBox{width:173px; text-indent:0;}
+.selectBox ul li.isSelBox:hover{background:#fff; color:#636363;}
+.selectBox ul li.isSelBox select{width:60px; border:1px solid #E6E6E6; height:23px; vertical-align:middle;}
+.selectBox ul li.isSelBox input{background:#3F86B2; color:#fff; height:23px; width:33px; border:none; font-size:12px; line-height:23px; margin-left:5px; vertical-align:middle;}
+
+.selectBoxIn{width:47px; text-align:center;}
+
+.filtrateList dd.otherFlt{padding-bottom:0;}
+.filtrateList dd.otherFlt span{width: 195px; margin-bottom:10px;}
+
+.filtrateList dd.firstLevel span{min-width:40px; width:auto; margin-right:15px;}
+
+.filtrateList .searchTxt{width:648px; height:34px; line-height:34px\9; border:1px solid #4286b2; padding:0 2px; vertical-align:middle;}
+.filtrateList .searchBtn{background:#4286b2 url(../../images/k150227/searchBtnBg.png) 9px center no-repeat; color:#fff; font:18px 'Microsoft Yahei'; width:124px; height:36px; vertical-align:middle; text-align:left; text-indent:38px;}
+.filtrateList .searchBtn:hover{background-color:#4EC5E9;}
+
+.filtrateList .fold{height:28px; line-height:28px; position:absolute; bottom:-29px; left:0; text-align:center; width:100%;}
+.filtrateList .fold a{width:90px; display:inline-block; font-weight:bold; text-indent:23px; text-align:left; border:1px solid #ececec; border-top:0; color:#000; background:#fff url(../../images/k150227/fltfoldicon.png) 60px center no-repeat; position:relative; top:-1px;}
+.filtrateList .fold a.moreFlt{background-image:url(../../images/k150227/fltfoldicon1.png);}
+
+.filtrateList dd span.doubleToTab a{padding-left:20px; background:url(../../images/k150227/duoxuanshanchu2.png) 5px center no-repeat;}
+.filtrateList dd span.doubleToTab a:hover{background:#4286b2 url(../../images/k150227/duoxuanshanchu.png) 0 center no-repeat;}
+.filtrateList dd span.doubleToTab a.yiselect, .filtrateList dd span a.yiselect:hover{color:#fff; background:#4286b2 url(../../images/k150227/duoxuanshanchu1.png) 0 center no-repeat;}
+
+/*范围*/
+.scopeCredit{float:left; width:670px; position:relative; margin-top:12px; margin-bottom:5px; margin-left:9px;}
+.showRule{height:auto; overflow:auto;}
+.filtrateList .hideFltItem{display:none;}
+
+/*筛选*/
+.priceRange{position:absolute; right:0px; top:0; *top:-1px; width:187px; color:#8E8E8E; display:none;background:#FFF;}
+.priceRange .sxTxt{width:60px; height:22px; border:1px solid #BABABA; text-align:center;}
+.priceRange .sxBtn{width:38px; height:24px; line-height:24px; border:none; color:#fff; background:#3F84AF; margin-left:8px;}
+.priceRange .sxBtn:hover{background-color:#4EC5E9;}
+
+/*列表
+----------------------------------*/
+.hyp{background:url(../../images/k150227/huanyipi.png) no-repeat; width: 100px; height: 23px; position:absolute; right:0; top: -23px;}
+.recommend{border:1px solid #e4e4e4; border-bottom:0;}
+.recommend .listItem{border-bottom:1px solid #e4e4e4; float:left;}
+.recommend .listItem .leftPrice{float:left; background:url(../../images/k150227/priceBg.png) center 26px no-repeat; width:215px; _width:200px; min-height:160px; text-align:center; color:#fc5f01; font-weight:bold; font-size:22px; line-height:1.4; position:relative;}
+.recommend .listItem .leftPrice .tjIco{position:absolute; left:-1px; top:-1px; background:url(../../images/k150227/jingxuanIcon.png); width:75px; height:75px;}
+.recommend .listItem .price{margin-top:46px; display:inline-block;}
+.recommend .listItem .rightBox{float:left; width:973px; padding:15px 0 10px 0;}
+.recommend .listItem .linkTitle a{color:#202c34; font-size:18px; display:inline-block; max-width:710px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden; vertical-align:middle;}
+.recommend .listItem .linkTitle a:hover{color:#f60;}
+.recommend .listItem .linkTitle img{vertical-align:middle; margin-left:18px;}
+.recommend .listItem .linkTitle .apu{margin-left:9px;}
+
+.recommend .listItem ul{float:left; margin-top:15px;}
+.recommend .listItem li{line-height:32px; color:#c6040d; margin-bottom:12px; margin-right:13px; width:180px;white-space: nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+.recommend .listItem li span{width:70px; height:32px; background:#fbfeff; color:#646464; text-align:center; display:inline-block; margin-right:5px;vertical-align:middle;}
+.recommend .listItem .imgV-2{vertical-align:-2px;}
+
+.recommend .listItem ul.markLine2{width:100%; margin-top:0;}
+.recommend .listItem ul.markLine2 li{float:left; max-width:90%; min-width:180px; width:auto;}
+
+.recommend .listItem ul.storeMark{width:100%; margin-top:0;}
+.recommend .listItem ul.storeMark li{width:100%;}
+
+.recommend .listItem:hover{background:#fafafa !important;}
+.recommend .listItem:hover .leftPrice{background-image:url(../../images/k150227/priceBg-hover.png); color:#fff;}
+
+.recommend .markNl{height:26px; border:1px solid #4286b2; color:#4286b2; font:bold 12px/26px 'Simsun'; padding:0 7px; display:inline-block; margin-right:10px; background:#fff;}
+
+.recommend .dtpfxht{display:inline-block;}
+.recommend .dtpfxht{*display:inline; *margin-right:5px;}
+.recommend .dtpfxht i{display:block; height:3px; width:12px; overflow:hidden; margin-top:2px;}
+.recommend .dtpfxht i.red{background:#C6040D;}
+.recommend .dtpfxht i.green{background:#018601;}
+
+.recommend .dtpfxht i.over{background:#C6040D;}
+.recommend .dtpfxht i.normal{background:#C6040D;}
+.recommend .dtpfxht i.lower{background:#018601;}
+.recommend .dtpfxht i.default{background:#BCBCBC;}
+
+.choicenesslist .listItem{background:#fffdfc;}
+
+.listBox{border-top:3px solid #9c9c9c;}
+.listBox .hd{padding:6px 16px; background:#f4f4f4;}
+.listBox .hd .sort{width:80px; height:27px; font:14px 'Microsoft Yahei'; color:#646464; background:#fff url(../../images/k150227/sortIcon.png) no-repeat; text-indent:8px; text-align:left; margin-right:8px;}
+.listBox .hd .sort0{background:#fff; text-align:center; text-indent:0;}
+.listBox .hd .sort1{background-position:65px -47px;}
+.listBox .hd .sort2{background-position:65px -74px;}
+.listBox .hd .sort3{background-position:65px 7px; background-color:#4286b2; color:#fff;}
+.listBox .hd .sort4{background-position:65px -19px; background-color:#4286b2; color:#fff;}
+.listBox .hd a{float:right; height:27px; line-height:27px; color:#c6040d; text-decoration:underline;}
+
+.listBox .listItem .leftPrice{min-height:225px; background-position:center 90px;}
+.listBox .listItem .price{display:block; margin:0 auto; margin-top:33px;}
+.listBox .listItem .classifyIcon{background:url(../../images/k150227/fenleitubiao.png) 0 56px no-repeat; width:79px; height:56px; display:block; margin:0 auto; margin-top:22px;}
+.listBox .listItem .t101{background-position:0 -0px;}
+.listBox .listItem .t102{background-position:0 -56px;}
+.listBox .listItem .t103{background-position:0 -112px;}
+.listBox .listItem .t104{background-position:0 -168px;}
+.listBox .listItem .t105{background-position:0 -224px;}
+.listBox .listItem .t106{background-position:0 -280px;}
+.listBox .listItem .t107{background-position:0 -336px;}
+.listBox .listItem .t108{background-position:0 -392px;}
+.listBox .listItem .t109{background-position:0 -448px;}
+.listBox .listItem .t110{background-position:0 -504px;}
+.listBox .listItem .t111{background-position:0 -560px;}
+.listBox .listItem .t112{background-position:0 -616px;}
+.listBox .listItem .t113{background-position:0 -672px;}
+.listBox .listItem .t114{background-position:0 -728px;}
+.listBox .listItem .t116{background-position:0 -896px;}
+.listBox .listItem .t117{background-position:0 -840px;}
+.listBox .listItem .t120{background-position:0 -784px;}
+
+.mjmsjlnr{display:inline-block; max-width:805px; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden; vertical-align:middle;}
+.mjmsjlnr{*display:inline;}
+.listBox .mjmsDetail{background:url(../../images/k150227/listItem-mjmsLink.png); width:49px; height:18px; line-height:18px; color:#fff; display:inline-block; text-indent:14px;vertical-align:middle;}
+
+.levelRangeOk{position:absolute; right:10px; bottom:30px; background:#4286B2; padding:0 15px; color:#fff;height:24px;line-height:24px;*overflow:visible;}
+.levelRangeOk:hover{background-color:#4EC5E9;}
+
+/*天猫
+-------------------------------------------*/
+.tmall .filtrateList dd.otherFlt span{width:156px;}
+.tmall .filtrateList .selectBox{width:130px;}
+.tmall .selectBox .selected{width:109px;}
+.tmall .recommend .listItem .leftPrice{background-image:url(../../images/k150227/priceBg-tmall.png); color:#c00000;}
+.tmall .recommend .listItem .leftPrice .tjIco{background-image:url(../../images/k150227/jingxuanIcon-tmall.png);}
+.tmall .recommend .listItem:hover .leftPrice{background-image:url(../../images/k150227/priceBg-hover-tmall.png); color:#fff;}
+
+.tmall .recommend .listItem .linkTitle img{margin-left:0; margin-right:12px;}
+
+.tmall .choicenesslist .listItem{background:#FFFCFC;}
+
+/*其它
+-------------------------------------------*/
+.qita .filtrateList dd.otherFlt span{width:156px; *margin-bottom:0;}
+.qita .filtrateList .selectBox{width:130px;}
+.qita .selectBox .selected{width:109px;}
+.qita .recommend .listItem .leftPrice{background-image:url(../../images/k150227/priceBg-qita.png);color:#2BAEB6;}
+.qita .recommend .listItem .leftPrice .tjIco{background-image:url(../../images/k150227/jingxuanIcon-qita.png);}
+.qita .recommend .listItem:hover .leftPrice{background-image:url(../../images/k150227/priceBg-hover-qita.png); color:#fff;}
+.qita .recommend .listItem .linkTitle img{margin-left:0; margin-right:12px;}
+
+.qita .choicenesslist .listItem{background:#FCFEFE;}
+
+.qita .certificateType .fltTabTo{width:140px;}
+
+/*企业店铺
+-------------------------------------------*/
+.enprs .recommend .listItem .linkTitle img{/*margin-left:0; margin-right:12px;*/}
+
+
+/*====================查找为空======================*/
+.nofind .shixiaoms{display:inline-block; vertical-align:middle; margin-left:25px; text-align:left;}
+.nofind .shixiaoms .title{color:#f60; font:normal 22px 'Microsoft Yahei'; margin-bottom:5px;}
+.nofind .shixiaoms p{font-size:16px; line-height:25px; color:#646464;}
+.nofind .shixiaoms p.bLast{font-size: 20px;color:#AF4B08;}
+.nofind .fbxq-btn, .nofind .back-btn{width:167px; height:38px; color:#fff; display:inline-block; margin-right:27px; font-size:18.67px; line-height:38px;}
+.nofind .fbxq-btn{background:#ff6600 url(../../public/images/ljfbxq-icon-btn.png) 11px center no-repeat; text-indent:42px;}
+.nofind .fbxq-btn:hover{background-color:#d85702; color:#fff;}
+.nofind .back-btn{background:#297BA1 url(../../public/images/back-icon-btn.png) 16px center no-repeat; text-indent:50px;}
+.nofind .back-btn:hover{background-color:#0D5F89; color:#fff;}
+
+.nofind .borderMol{border:1px solid #e6e6e6; border-top:none;}
+.nofind .borderMol .hd{padding-left:30px; height:50px; line-height:50px; font-size:18px; color:#000;}
+.nofind .hdRight{ height:24px; line-height:24px; color:#279ff0; font-size:14px; display:block; text-indent:32px; float:right; margin-top:15px;}
+.nofind .tltj{background:url(../../images/k150227/huanyipi0.png) 0 center no-repeat; width:80px; text-indent:23px;}
+.nofind .tjlist{margin-top:5px; padding-bottom:15px;}
+.nofind .tjlist li{position:relative; width:258px; float:left; border-right:1px solid #ececec; padding:0 19px;}
+.nofind .tjlist .tjIco{position:absolute; left:-1px; top:-1px; background:url(../../images/k150227/tuijianIcon.png); width:75px; height:75px;}
+.nofind .tjlist .price{background:url(../../images/k150227/priceBg.png) center 26px no-repeat; width:100%; height:115px; text-align:center; color:#fc5f01; font-weight:bold; font-size:28.96px; line-height:1; padding-top:45px;}
+.nofind .tjlist .title{text-align:center; color:#918f8f; font-size:12px;}
+.nofind .tjlist .title p{margin-bottom:6px;}
+.nofind .tjlist .title a{display:block; width:100%; font-size:16px; color:#3e3e3e; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+.nofind .tjlist .title img{vertical-align:middle;}
+.nofind .tjlist li:hover{background:#FAFAFA;}
+.nofind .tjlist li:hover .price{background-image:url(../../images/k150227/priceBg-hover.png); color:#fff;}
+.nofind .tmall .tjlist .tjIco{background-image:url(../../images/k150227/tuijianIcon-tmall.png);}
+.nofind .tmall .tjlist .price{background-image:url(../../images/k150227/priceBg-tmall.png); color:#c00000;}
+.nofind .tmall .tjlist li:hover .price{background-image:url(../../images/k150227/priceBg-hover-tmall.png);}
+
+/*新右侧图片0401
+---------------------------------------*/
+.rightImg{float:right; background:#FAFDFD; border:1px solid #E4E4E4; width:285px; height:206px;}
+.rightImg .fbxq, .rightImg .djdp{display:block; width:223px; height:68px; margin:0 auto; text-align:center; line-height:68px;}
+.rightImg .fbxq{background:#2CAEB6; margin-top:22.5px;}
+.rightImg .djdp{background:#FC5F01; margin-top:25px;}
+.rightImg .fbxq:hover{background:#158E95;}
+.rightImg .djdp:hover{background:#D35003;}
+.rightImg a img, .rightImg a i{display:inline-block; vertical-align:middle;}
+.rightImg a i{height:100%; overflow:hidden;}
+.rightImg .hideOne{text-align:center; margin-top:20px;}
+
+.tmall .rightImg{height:285px;}
+.tmall .rightImg .djdp{background:#C00000;}
+.tmall .rightImg .djdp:hover{background:#950303;}
+
+.qita .rightImg{height:321px;}
+.qita .rightImg .fbxq{background:#74b4e0;}
+.qita .rightImg .fbxq:hover{background:#227fbf;}
+.qita .rightImg .djdp{background:#2baeb6;}
+.qita .rightImg .djdp:hover{background:#0c8991;}
+.qita .rightImg .hideOne{margin-top:40px;}
+
+/*发布需求列表底部新增*/
+.postwant-lf{background:#FAFAFA; padding:40px 0; text-align:center; font-family:'Microsoft Yahei'; margin-top:42px;}
+.postwant-lf .shixiaoms{display:inline-block; vertical-align:middle; margin-left:25px; text-align:left;}
+.postwant-lf .shixiaoms{*display:inline;}
+.postwant-lf .shixiaoms .title{color:#000; font:normal 23.35px 'Microsoft Yahei'; margin-bottom:5px;}
+.postwant-lf .shixiaoms p{font-size:16px; line-height:25px; color:#000;}
+.postwant-lf .fbxq-btn{width:178px; height:27px; color:#fff; display:inline-block; font-size:16px; line-height:26px;}
+.postwant-lf .fbxq-btn{background:#FD5E02 url(../../images/k150227/ljfbxq-icon-btn2.png) 15px center no-repeat; text-indent:37px;}
+.postwant-lf .fbxq-btn:hover{background-color:#d85702; color:#fff;}
+
+/*今日推荐0403
+-------------------------------------------*/
+.recommendToday{overflow:hidden; margin-top:15px !important;}
+.recommendToday ul{width:1220px;}
+.recommendToday li{width:275px; margin-right:30px; float:left;}
+.recommendToday .titleLink{display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden; margin-bottom:3px;}
+.recommendToday .credit-rcdt *{vertical-align:middle; display:inline-block;}
+.recommendToday .reasonRank{position:relative; margin-top:12px; height:110px;}
+.recommendToday .reasonRank .mbody-rcdt{border:1px solid #CDCDCD; border-radius:5px; padding:6px 40px 6px 10px; height:68px; line-height:1.3;}
+.recommendToday .reasonRank .t-org{color:#fc833b;}
+.recommendToday .reasonRank .rBody{color:#999; margin-top:3px; font-size:12px;}
+.recommendToday .reasonRank .flag-rcdt{position:absolute; background:url(../../images/k150227/jinrituijiannewbiaozhi.png); width:35px; height:94px; top:-5px; right:9px;}
+
+.tmall .recommendToday .reasonRank .flag-rcdt{background-image:url(../../images/k150227/jinrituijiannewbiaozhi-tmall.png);}
+
+/*精品小图标标题后
+-------------------------------------------*/
+.Boutique-mark{display:inline-block; width:40px; height:20px; margin-left:15px; text-align:center; line-height:20px; font-size:14px; font-style:normal; color:#fff; background:#ff0000;}

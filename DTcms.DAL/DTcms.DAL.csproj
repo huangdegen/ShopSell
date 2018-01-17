@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DTcms.DAL</RootNamespace>
     <AssemblyName>DTcms.DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +49,7 @@
     <Compile Include="article_attribute_field.cs" />
     <Compile Include="article_category.cs" />
     <Compile Include="article_comment.cs" />
+    <Compile Include="data_dictionary.cs" />
     <Compile Include="article_tags.cs" />
     <Compile Include="manager.cs" />
     <Compile Include="manager_log.cs" />
@@ -53,6 +57,7 @@
     <Compile Include="orders.cs" />
     <Compile Include="order_config.cs" />
     <Compile Include="plugin.cs" />
+    <Compile Include="price_style.cs" />
     <Compile Include="sys_config.cs" />
     <Compile Include="url_rewrite.cs" />
     <Compile Include="users.cs" />
